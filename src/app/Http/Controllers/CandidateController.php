@@ -3,62 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCandidateRequest;
-use App\Http\Requests\UpdateCandidateRequest;
 use App\Models\Candidate;
+use Illuminate\Http\JsonResponse;
 
 class CandidateController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(): JsonResponse
+    {
+        return response()->json(Candidate::all());
+    }
+
+    public function store(StoreCandidateRequest $request): JsonResponse
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreCandidateRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreCandidateRequest $request)
+    public function show(Candidate $candidate): JsonResponse
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Candidate  $candidate
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Candidate $candidate)
+    public function changeStatus(Candidate $candidate): JsonResponse
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateCandidateRequest  $request
-     * @param  \App\Models\Candidate  $candidate
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateCandidateRequest $request, Candidate $candidate)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Candidate  $candidate
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Candidate $candidate)
+    public function getTimeline(Candidate $candidate): JsonResponse
     {
         //
     }
