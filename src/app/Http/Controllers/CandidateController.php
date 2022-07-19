@@ -2,64 +2,70 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCandidateRequest;
-use App\Http\Requests\UpdateCandidateRequest;
+use App\Http\Requests\Candidate\ChangeCandidateStatusRequest;
+use App\Http\Requests\Candidate\StoreCandidateRequest;
+use App\Http\Requests\Candidate\UpdateCandidateRequest;
+use App\Http\Resources\Candidate\CandidateResource;
+use App\Http\Resources\CandidateStatusChange\CandidateStatusChangeResource;
+use App\Http\Resources\Skill\SkillResource;
 use App\Models\Candidate;
+use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\Response as R;
 
 class CandidateController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(): JsonResponse
     {
-        //
+        $candidates = Candidate::all();
+
+        return CandidateResource::collection($candidates)->response();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreCandidateRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreCandidateRequest $request)
+    public function store(StoreCandidateRequest $request): JsonResponse
     {
-        //
+        $candidate = Candidate::create($request->validated());
+
+        return CandidateResource::make($candidate)->response()->setStatusCode(R::HTTP_CREATED);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Candidate  $candidate
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Candidate $candidate)
+    public function show(Candidate $candidate): JsonResponse
     {
-        //
+        return CandidateResource::make($candidate)->response();
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateCandidateRequest  $request
-     * @param  \App\Models\Candidate  $candidate
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateCandidateRequest $request, Candidate $candidate)
+    public function changeStatus(Candidate $candidate, ChangeCandidateStatusRequest $request): JsonResponse
     {
-        //
+        return CandidateResource::make($candidate)->response();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Candidate  $candidate
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Candidate $candidate)
+    public function update(UpdateCandidateRequest $request, Candidate $candidate): JsonResponse
     {
-        //
+        $candidate->update($request->validated());
+
+        return CandidateResource::make($candidate)->response();
+    }
+
+    public function updateSkills(Candidate $candidate): JsonResponse
+    {
+        $candidate->skills()->sync(request('skills'));
+
+        return CandidateResource::make($candidate)->response();
+    }
+
+    public function getSkills(Candidate $candidate): JsonResponse
+    {
+        return SkillResource::collection($candidate->skills)->response();
+    }
+
+    public function getTimeline(Candidate $candidate): JsonResponse
+    {
+        return CandidateStatusChangeResource::collection($candidate->statusChanges)->response();
+    }
+
+    public function destroy(Candidate $candidate): JsonResponse
+    {
+        $candidate->delete();
+
+        return response()->json(null, R::HTTP_NO_CONTENT);
     }
 }

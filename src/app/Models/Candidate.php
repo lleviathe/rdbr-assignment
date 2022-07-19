@@ -46,9 +46,4 @@ class Candidate extends Model
     {
         return $this->first_name . ' ' . $this->last_name;
     }
-
-    public function getSalaryRangeAttribute(): string
-    {
-        return $this->salary_from . ' - ' . $this->salary_to;
-    }
 }
