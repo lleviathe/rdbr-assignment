@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Candidate;
 
+use App\Enums\RecruitmentStatus;
 use Illuminate\Foundation\Http\FormRequest;
+use Spatie\LaravelOptions\Options;
 
-class UpdateCandidateRequest extends FormRequest
+class ChangeCandidateStatusRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +15,7 @@ class UpdateCandidateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +26,8 @@ class UpdateCandidateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'status' => Options::forEnum(RecruitmentStatus::class)->toValidationRule(),
+            'comment' => 'sometimes|string',
         ];
     }
 }

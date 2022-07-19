@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Http\Resources\Candidate\CandidateResource;
+use App\Http\Resources\CandidateStatusChange\CandidateStatusChangeResource;
+use App\Http\Resources\Skill\SkillResource;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        CandidateResource::withoutWrapping();
+        SkillResource::withoutWrapping();
+        CandidateStatusChangeResource::withoutWrapping();
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CandidateController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('v1')->group(function () {
+    Route::apiResource('candidates', CandidateController::class)->names('api.v1.candidates');
+    Route::apiResource('skills', SkillController::class)->names('api.v1.skills');
+
     Route::controller(CandidateController::class)->group(function () {
-        Route::get('candidates', 'index')->name('api.v1.candidates.index');
-        Route::post('candidates', 'store')->name('api.v1.candidates.store');
         Route::put('candidates/{candidate}/changeStatus', 'changeStatus')->name('api.v1.candidates.changeStatus');
-        Route::get('candidates/{candidate}', 'show')->name('api.v1.candidates.show');
+        Route::get('candidates/{candidate}/skills', 'getSkills')->name('api.v1.candidates.skills');
+        Route::post('candidates/{candidate}/skills', 'updateSkills')->name('api.v1.candidates.updateSkills');
         Route::get('candidates/{candidate}/timeline', 'getTimeline')->name('api.v1.candidates.timeline');
         Route::get('candidates/status/{status}', 'getByStatus')->name('api.v1.candidates.getByStatus');
     });
