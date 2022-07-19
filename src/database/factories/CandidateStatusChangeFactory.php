@@ -19,10 +19,10 @@ class CandidateStatusChangeFactory extends Factory
     {
         return [
             'status_before' => $this->faker->randomElement(
-                array_map(static fn($status) => $status->value, RecruitmentStatus::cases())
+                array_map(static fn ($status) => $status->value, RecruitmentStatus::cases())
             ),
             'status_after' => $this->faker->randomElement(
-                array_map(static fn($status) => $status->value, RecruitmentStatus::cases())
+                array_map(static fn ($status) => $status->value, RecruitmentStatus::cases())
             ),
             'comment' => $this->faker->text,
         ];

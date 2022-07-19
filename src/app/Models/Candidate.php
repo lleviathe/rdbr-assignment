@@ -25,11 +25,12 @@ class Candidate extends Model
         'salary_to',
         'source',
         'linkedin_url',
+        'cv_url',
         'status',
     ];
 
     protected $casts = [
-        'status' => RecruitmentStatus::class
+        'status' => RecruitmentStatus::class,
     ];
 
     public function statusChanges(): HasMany

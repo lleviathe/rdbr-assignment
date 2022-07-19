@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('linkedin_url')->nullable();
             $table->enum(
                 'status',
-                array_map(static fn($status) => $status->value, RecruitmentStatus::cases())
+                array_map(static fn ($status) => $status->value, RecruitmentStatus::cases())
             )->default(
                 RecruitmentStatus::INITIAL->value
             );

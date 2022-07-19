@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Skill;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SkillSeeder extends Seeder
@@ -28,7 +27,7 @@ class SkillSeeder extends Seeder
                 ['title' => 'Ruby'],
                 ['title' => 'Kotlin'],
                 ['title' => 'TypeScript'],
-                ['title' => 'Go']
+                ['title' => 'Go'],
             ]
         );
     }

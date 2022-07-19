@@ -4,8 +4,8 @@ namespace Tests\Feature\Api\V1;
 
 use App\Models\Skill;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 use Symfony\Component\HttpFoundation\Response as R;
+use Tests\TestCase;
 
 class SkillTest extends TestCase
 {

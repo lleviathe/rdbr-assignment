@@ -35,8 +35,9 @@ class StoreCandidateRequest extends FormRequest
             'salary_from' => 'sometimes|integer|min:0',
             'salary_to' => 'sometimes|integer|gte:salary_from',
             'linkedin_url' => 'sometimes|string|max:255',
+            'cv' => 'file|mimes:pdf,doc,docx,ppt,pptx|max:8192',
             'status' => Options::forEnum(RecruitmentStatus::class)->nullable()->toValidationRule(),
-            'skills' => 'sometimes|array|exists:skills,id'
+            'skills' => 'sometimes|array|exists:skills,id',
         ];
     }
 }

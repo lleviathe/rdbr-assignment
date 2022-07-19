@@ -27,8 +27,9 @@ class CandidateFactory extends Factory
             'salary_from' => $this->faker->numberBetween(1000, 4000),
             'salary_to' => $this->faker->numberBetween(2000, 6000),
             'linkedin_url' => $this->faker->url,
+            'cv_url' => $this->faker->url,
             'status' => $this->faker->randomElement(
-                array_map(static fn($status) => $status->value, RecruitmentStatus::cases())
+                array_map(static fn ($status) => $status->value, RecruitmentStatus::cases())
             ),
         ];
     }
