@@ -4,6 +4,7 @@ namespace Tests\Feature\Api\V1;
 
 use App\Enums\RecruitmentStatus;
 use App\Models\Candidate;
+use App\Models\CandidateStatusChange;
 use App\Models\Skill;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
@@ -22,7 +23,7 @@ class CandidateTest extends TestCase
         $response = $this->getJson(route('api.v1.candidates.index'));
 
         $response->assertStatus(200);
-        $response->assertJsonCount(1);
+        $response->assertJsonPath('data.0.id', 1);
     }
 
     public function test_can_retrieve_candidate(): void
@@ -125,7 +126,6 @@ class CandidateTest extends TestCase
         );
     }
 
-    // test can attach cv to the candidate
     public function test_can_attach_cv_to_candidate(): void
     {
         Storage::fake();
@@ -188,4 +188,6 @@ class CandidateTest extends TestCase
             'skill_id' => $updatedSkills->first()->id,
         ]);
     }
+
+
 }

@@ -13,7 +13,8 @@ class CandidateStatusChange extends Model
 
     protected $fillable = [
         'candidate_id',
-        'status',
+        'status_before',
+        'status_after',
         'comment',
     ];
 

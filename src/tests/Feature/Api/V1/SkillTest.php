@@ -18,7 +18,7 @@ class SkillTest extends TestCase
         $response = $this->getJson(route('api.v1.skills.index'));
 
         $response->assertStatus(200);
-        $response->assertJsonCount(1);
+        $response->assertJsonPath('data.0.id', 1);
     }
 
     public function test_can_retrieve_skill(): void
