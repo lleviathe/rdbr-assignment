@@ -22,7 +22,7 @@ class CandidateController extends Controller
 
     public function index(): JsonResponse
     {
-        $candidates = Candidate::all();
+        $candidates = Candidate::paginate();
 
         return CandidateResource::collection($candidates)->response();
     }
@@ -45,7 +45,13 @@ class CandidateController extends Controller
 
     public function changeStatus(Candidate $candidate, ChangeCandidateStatusRequest $request): JsonResponse
     {
-        return CandidateResource::make($candidate)->response();
+        $candidate = $this->service->changeStatus($candidate, $request->validated());
+
+        if (!$candidate) {
+            return response()->json(['message' => 'Failed to change candidate status'], R::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
+        return CandidateStatusChangeResource::make($candidate)->response();
     }
 
     public function update(UpdateCandidateRequest $request, Candidate $candidate): JsonResponse

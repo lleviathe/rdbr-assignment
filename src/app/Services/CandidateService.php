@@ -13,7 +13,6 @@ class CandidateService
     public function __construct(
         protected FileService $fileService
     ) {
-        $this->fileService = $fileService;
     }
 
     // Input array may be replaced with DTOs after refactoring.
@@ -26,6 +25,8 @@ class CandidateService
             $path = $this->fileService->save($file, sprintf('/cvs/%s', $candidate->id));
 
             $candidate->update(['cv_url' => $this->fileService->getUrl($path)]);
+
+            DB::commit();
 
             return $candidate;
         } catch (Exception $e) {
@@ -52,7 +53,35 @@ class CandidateService
 
             return false;
         }
+    }
 
-        return $candidate;
+    public function changeStatus(Candidate $candidate, array $input): Candidate|bool
+    {
+        DB::beginTransaction();
+
+        try {
+            $candidate->statusChanges()->create(
+                [
+                    'status_before' => $candidate->status,
+                    'status_after' => $input['status'],
+                    'comment' => $input['comment'] ?? null,
+                ]
+            );
+
+            $candidate->update(
+                [
+                    'status' => $input['status'],
+                ]
+            );
+
+            DB::commit();
+
+            return $candidate;
+        } catch (Exception $e) {
+            DB::rollBack();
+            Log::error('Failed to change candidate status: ' . $e->getMessage());
+
+            return false;
+        }
     }
 }

@@ -13,7 +13,7 @@ class SkillController extends Controller
 {
     public function index(): JsonResponse
     {
-        $skills = Skill::all();
+        $skills = Skill::paginate();
 
         return SkillResource::collection($skills)->response();
     }
