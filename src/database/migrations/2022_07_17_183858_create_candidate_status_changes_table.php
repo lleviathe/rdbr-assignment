@@ -19,8 +19,8 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Candidate::class);
             $table->text('comment')->nullable();
-            $table->enum('status_before', array_map(static fn($status) => $status->value, RecruitmentStatus::cases()));
-            $table->enum('status_after', array_map(static fn($status) => $status->value, RecruitmentStatus::cases()));
+            $table->enum('status_before', array_map(static fn ($status) => $status->value, RecruitmentStatus::cases()));
+            $table->enum('status_after', array_map(static fn ($status) => $status->value, RecruitmentStatus::cases()));
             $table->timestamps();
             $table->softDeletes();
         });

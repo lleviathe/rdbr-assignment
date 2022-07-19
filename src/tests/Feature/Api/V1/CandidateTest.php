@@ -6,6 +6,8 @@ use App\Enums\RecruitmentStatus;
 use App\Models\Candidate;
 use App\Models\Skill;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\Response as R;
 use Tests\TestCase;
 
@@ -43,6 +45,8 @@ class CandidateTest extends TestCase
 
     public function test_can_store_candidate(): void
     {
+        Storage::fake();
+
         $candidate = [
             'first_name' => 'John',
             'last_name' => 'Doe',
@@ -54,9 +58,16 @@ class CandidateTest extends TestCase
             'linkedin_url' => 'https://www.linkedin.com/in/johndoe',
             'position' => 'Software Engineer',
         ];
+
         $response = $this->postJson(
             route('api.v1.candidates.store'),
-            $candidate
+            array_merge($candidate, [
+                'cv' => UploadedFile::fake()->create(
+                    'cv.pdf',
+                    1024,
+                    'application/pdf'
+                ),
+            ])
         );
 
         $response->assertStatus(R::HTTP_CREATED);
@@ -69,6 +80,9 @@ class CandidateTest extends TestCase
                 ]
             )
         );
+        Storage::assertExists(
+            'cvs/' . $response->json('id') . '/cv.pdf'
+        );
     }
 
     public function test_can_update_candidate(): void
@@ -78,7 +92,7 @@ class CandidateTest extends TestCase
             'first_name' => 'John',
             'last_name' => 'Doe',
             'email' => 'john.doe@example.com',
-            'position' => 'PHP Engineer'
+            'position' => 'PHP Engineer',
         ];
 
         $response = $this->patchJson(
@@ -108,6 +122,34 @@ class CandidateTest extends TestCase
                 'id' => $candidate->id,
                 'deleted_at' => now()->toDateTimeString(),
             ]
+        );
+    }
+
+    // test can attach cv to the candidate
+    public function test_can_attach_cv_to_candidate(): void
+    {
+        Storage::fake();
+
+        $candidate = Candidate::factory()->create();
+        $cv = UploadedFile::fake()->create('cv.pdf', 1024, 'application/pdf');
+
+        $response = $this->patchJson(
+            route('api.v1.candidates.update', $candidate),
+            [
+                'cv' => $cv,
+            ]
+        );
+
+        $response->assertStatus(R::HTTP_OK);
+        $this->assertDatabaseHas(
+            'candidates',
+            [
+                'id' => $candidate->id,
+                'cv_url' => $response->json('cv_url'),
+            ]
+        );
+        Storage::assertExists(
+            'cvs/' . $response->json('id') . '/cv.pdf'
         );
     }
 

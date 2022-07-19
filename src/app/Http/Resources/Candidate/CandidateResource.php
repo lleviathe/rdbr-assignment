@@ -24,6 +24,7 @@ class CandidateResource extends JsonResource
             'status' => $this->status,
             'skills' => SkillResource::collection($this->skills),
             'timeline' => CandidateStatusChangeResource::collection($this->whenLoaded('statusChanges')),
+            'cv_url' => $this->cv_url,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
