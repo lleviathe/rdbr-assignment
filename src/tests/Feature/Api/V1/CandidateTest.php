@@ -141,7 +141,6 @@ class CandidateTest extends TestCase
         );
 
         $response->assertStatus(R::HTTP_OK);
-//        dump($response->json());
         $this->assertDatabaseHas(
             'candidates',
             [
