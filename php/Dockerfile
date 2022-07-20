@@ -22,11 +22,12 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install required extensions
+RUN pecl install xdebug
 RUN git clone -b release/5.3.4 https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis
 RUN docker-php-ext-install -j5 mbstring zip exif pcntl pdo_pgsql xsl redis
 RUN docker-php-ext-configure gd
 RUN docker-php-ext-install gd
-RUN docker-php-ext-enable redis
+RUN docker-php-ext-enable redis xdebug
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

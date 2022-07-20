@@ -22,7 +22,6 @@ Route::prefix('v1')->group(function () {
     Route::controller(CandidateController::class)->group(function () {
         Route::patch('candidates/{candidate}/changeStatus', 'changeStatus')->name('api.v1.candidates.changeStatus');
         Route::get('candidates/{candidate}/skills', 'getSkills')->name('api.v1.candidates.skills');
-        Route::post('candidates/{candidate}/skills', 'updateSkills')->name('api.v1.candidates.updateSkills');
         Route::get('candidates/{candidate}/timeline', 'getTimeline')->name('api.v1.candidates.timeline');
         Route::get('candidates/status/{status}', 'getByStatus')->name('api.v1.candidates.getByStatus');
     });

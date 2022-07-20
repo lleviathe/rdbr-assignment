@@ -43,7 +43,7 @@ class CandidateStatusChangeTest extends TestCase
             route('api.v1.candidates.changeStatus', $candidate),
             [
                 'status' => RecruitmentStatus::HIRED->value,
-                'comment' => 'status changed to hired'
+                'comment' => 'status changed to hired',
             ]
         );
 
@@ -68,7 +68,7 @@ class CandidateStatusChangeTest extends TestCase
             route('api.v1.candidates.changeStatus', $candidate),
             [
                 'status' => RecruitmentStatus::HIRED->value,
-                'comment' => 'status changed to hired'
+                'comment' => 'status changed to hired',
             ]
         );
 

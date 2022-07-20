@@ -1,6 +1,6 @@
 # Introduction
 
-
+Simple recruitment API service made as Redberry test assignment.
 
 This documentation aims to provide all the information you need to work with our API.
 
@@ -10,5 +10,5 @@ You can switch the language used with the tabs at the top right (or from the nav
 > Base URL
 
 ```yaml
-http://localhost:8008/
+http://localhost:8008
 ```

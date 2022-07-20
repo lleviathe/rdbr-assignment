@@ -33,7 +33,7 @@ class UpdateCandidateRequest extends FormRequest
             'salary_from' => 'sometimes|integer|min:0',
             'salary_to' => 'sometimes|integer|gte:salary_from',
             'linkedin_url' => 'sometimes|string|max:255',
-            'cv' => 'file|mimes:pdf,doc,docx,ppt,pptx|max:8192',
+            'cv' => 'file|mimes:pdf|max:8192',
             'skills' => 'sometimes|array|exists:skills,id',
         ];
     }
