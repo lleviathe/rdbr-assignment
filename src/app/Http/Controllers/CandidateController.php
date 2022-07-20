@@ -39,9 +39,12 @@ class CandidateController extends Controller
         return CandidateResource::make($candidate)->response()->setStatusCode(R::HTTP_CREATED);
     }
 
-    public function getByStatus(Candidate $candidate, RecruitmentStatus $status): JsonResponse
+    /**
+     * @urlParam status string required The status of candidate. Example: initial
+     */
+    public function getByStatus(RecruitmentStatus $status): JsonResponse
     {
-        $candidates = $candidate->where('status', $status)->paginate();
+        $candidates = Candidate::where('status', $status)->paginate();
 
         return CandidateResource::collection($candidates)->response();
     }
@@ -69,13 +72,6 @@ class CandidateController extends Controller
         if (!$result) {
             return response()->json(['message' => 'Failed to update candidate'], R::HTTP_INTERNAL_SERVER_ERROR);
         }
-
-        return CandidateResource::make($candidate)->response();
-    }
-
-    public function updateSkills(Candidate $candidate): JsonResponse
-    {
-        $candidate->skills()->sync(request('skills'));
 
         return CandidateResource::make($candidate)->response();
     }

@@ -23,6 +23,7 @@
         /* starts out as display none and is replaced with js later  */
                     body .content .bash-example code { display: none; }
                     body .content .javascript-example code { display: none; }
+                    body .content .php-example code { display: none; }
             </style>
 
     <script>
@@ -36,7 +37,7 @@
 
 </head>
 
-<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;,&quot;php&quot;]">
 
 <a href="#" id="nav-button">
     <span>
@@ -49,6 +50,7 @@
             <div class="lang-selector">
                                             <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                             <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                            <button type="button" class="lang-button" data-language-name="php">php</button>
                     </div>
     
     <div class="search">
@@ -116,6 +118,9 @@
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-candidates--candidate_id--timeline">
                         <a href="#endpoints-GETapi-v1-candidates--candidate_id--timeline">GET api/v1/candidates/{candidate_id}/timeline</a>
                     </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-candidates-status--status-">
+                        <a href="#endpoints-GETapi-v1-candidates-status--status-">GET api/v1/candidates/status/{status}</a>
+                    </li>
                                                     </ul>
                             </ul>
         
@@ -136,13 +141,14 @@
     <div class="dark-box"></div>
     <div class="content">
         <h1 id="introduction">Introduction</h1>
+<p>Simple recruitment API service made as Redberry test assignment.</p>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 <blockquote>
 <p>Base URL</p>
 </blockquote>
-<pre><code class="language-yaml">http://localhost:8008/</code></pre>
+<pre><code class="language-yaml">http://localhost:8008</code></pre>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>This API is not authenticated.</p>
@@ -183,6 +189,21 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8008/api/v1/candidates',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -837,18 +858,18 @@ access-control-allow-origin: *
     "http://localhost:8008/api/v1/candidates" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "first_name=pccmbcevrlyvufnkucebjxfahvwyerrnivjchmuyzrompqngbdvqcgnqjtbdvxhwdfryfzsirrskhqxffenhggpjumkjgm" \
-    --form "last_name=ubjemizcmteknlfsplcnmlfqlsiqiwkcuhtfaycrivswnnymhkweopxgtndtp" \
-    --form "email=tptgudiq" \
-    --form "phone=amiuiwsyvyxdyltcxpcczamslmjwooxxxtcndpdcirdejohappizwwqbxtuvpdqkojutsplhcvjneylfdodwldsxcayejkaquofcfvmftzkvbvohzrbafiwqyufcosfhkfxgkfqtsxtzjxbbmqexvkgpiniwemgawphggmgjfpdxqhpggpedevfnpchvocrhsikepndtimybwzeyxwewsslwopwevvquab" \
-    --form "position=izkzrajmgbnxdyfenidptnvoifsuimzrswrzcrlxhobjszdbawlhvtrginsoufmjcioao" \
+    --form "first_name=fnffotqyjptogltzdrqdgpwsqdfmdvhsdriaurutchneoestjtfkgmhgcwobxjdmhltjcrq" \
+    --form "last_name=ceufuhydyecxkoztgooqsetornlhvzxccvqgsyytrdijddvectqqdv" \
+    --form "email=sgobajkekptdrfjyotsjgkqkclueoriveqzgonfmowijkjkqvhnrmsaclakvvievmvysrjwugiwtuuizwtjnobkubvzwqqlisgkzna" \
+    --form "phone=ssmidrhvmgeziquljkmwunkikrmcbmwcisddhzqiakuubuqqkfpmdwgovzxjxomtsofdqueuskkzxdzjwiqkxgltmnbavwjkkpwsimiliiocffpwnnkiyfdshaolpootowjiiwcrjkcifwscmsfinhz" \
+    --form "position=xixbysaxgxazrxjtaevmulbqbmufrlvustkuhjxxdkqdhczvxgaddktikbigvmzmtucmbiapjhzmsovsgqmwvtqgapbcemasfbahvqejtbayqyykwdgqobiyzpxvjlgjjlriuhjpfawlrtwtzcguwpqkohtrpkxobyjgrhdakudtuyesvycvfefsftxfnespmkthocmxwdmxbmccqhbewtstbsfvxk" \
     --form "years_of_experience=0" \
     --form "salary_from=0" \
-    --form "salary_to=9" \
-    --form "linkedin_url=tqqtchyjdtnnhiewnhgsmbhxgqaqgasoobvzyjbgigoenrubytranqdvxmkyiygcviwmqvvgekjnmqkovpptqoaisjnwmemxslqhtthertyzluhgqcsydfoa" \
-    --form "status=initial" \
-    --form "skills[]=omnis" \
-    --form "cv=@/tmp/phpVsN3cn" </code></pre></div>
+    --form "salary_to=5" \
+    --form "linkedin_url=thgaqiojjflfcagcwqypaxrfindighabqixfljbqkdwjxdmnygnhwuvexliabagmmhtevjirlultzdfyrypgekvudbyfllyoqktdcxeockcrthxdcdxaqaexjiyshfxikresoszvwgxkxqbwjrhnuiyreplhsccdifgvrpbacmkrlmtui" \
+    --form "status=rejected" \
+    --form "skills[]=quidem" \
+    --form "cv=@/tmp/phpef5ls6" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -862,17 +883,17 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('first_name', 'pccmbcevrlyvufnkucebjxfahvwyerrnivjchmuyzrompqngbdvqcgnqjtbdvxhwdfryfzsirrskhqxffenhggpjumkjgm');
-body.append('last_name', 'ubjemizcmteknlfsplcnmlfqlsiqiwkcuhtfaycrivswnnymhkweopxgtndtp');
-body.append('email', 'tptgudiq');
-body.append('phone', 'amiuiwsyvyxdyltcxpcczamslmjwooxxxtcndpdcirdejohappizwwqbxtuvpdqkojutsplhcvjneylfdodwldsxcayejkaquofcfvmftzkvbvohzrbafiwqyufcosfhkfxgkfqtsxtzjxbbmqexvkgpiniwemgawphggmgjfpdxqhpggpedevfnpchvocrhsikepndtimybwzeyxwewsslwopwevvquab');
-body.append('position', 'izkzrajmgbnxdyfenidptnvoifsuimzrswrzcrlxhobjszdbawlhvtrginsoufmjcioao');
+body.append('first_name', 'fnffotqyjptogltzdrqdgpwsqdfmdvhsdriaurutchneoestjtfkgmhgcwobxjdmhltjcrq');
+body.append('last_name', 'ceufuhydyecxkoztgooqsetornlhvzxccvqgsyytrdijddvectqqdv');
+body.append('email', 'sgobajkekptdrfjyotsjgkqkclueoriveqzgonfmowijkjkqvhnrmsaclakvvievmvysrjwugiwtuuizwtjnobkubvzwqqlisgkzna');
+body.append('phone', 'ssmidrhvmgeziquljkmwunkikrmcbmwcisddhzqiakuubuqqkfpmdwgovzxjxomtsofdqueuskkzxdzjwiqkxgltmnbavwjkkpwsimiliiocffpwnnkiyfdshaolpootowjiiwcrjkcifwscmsfinhz');
+body.append('position', 'xixbysaxgxazrxjtaevmulbqbmufrlvustkuhjxxdkqdhczvxgaddktikbigvmzmtucmbiapjhzmsovsgqmwvtqgapbcemasfbahvqejtbayqyykwdgqobiyzpxvjlgjjlriuhjpfawlrtwtzcguwpqkohtrpkxobyjgrhdakudtuyesvycvfefsftxfnespmkthocmxwdmxbmccqhbewtstbsfvxk');
 body.append('years_of_experience', '0');
 body.append('salary_from', '0');
-body.append('salary_to', '9');
-body.append('linkedin_url', 'tqqtchyjdtnnhiewnhgsmbhxgqaqgasoobvzyjbgigoenrubytranqdvxmkyiygcviwmqvvgekjnmqkovpptqoaisjnwmemxslqhtthertyzluhgqcsydfoa');
-body.append('status', 'initial');
-body.append('skills[]', 'omnis');
+body.append('salary_to', '5');
+body.append('linkedin_url', 'thgaqiojjflfcagcwqypaxrfindighabqixfljbqkdwjxdmnygnhwuvexliabagmmhtevjirlultzdfyrypgekvudbyfllyoqktdcxeockcrthxdcdxaqaexjiyshfxikresoszvwgxkxqbwjrhnuiyreplhsccdifgvrpbacmkrlmtui');
+body.append('status', 'rejected');
+body.append('skills[]', 'quidem');
 body.append('cv', document.querySelector('input[name="cv"]').files[0]);
 
 fetch(url, {
@@ -880,6 +901,71 @@ fetch(url, {
     headers,
     body,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8008/api/v1/candidates',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'application/json',
+        ],
+        'multipart' =&gt; [
+            [
+                'name' =&gt; 'first_name',
+                'contents' =&gt; 'fnffotqyjptogltzdrqdgpwsqdfmdvhsdriaurutchneoestjtfkgmhgcwobxjdmhltjcrq'
+            ],
+            [
+                'name' =&gt; 'last_name',
+                'contents' =&gt; 'ceufuhydyecxkoztgooqsetornlhvzxccvqgsyytrdijddvectqqdv'
+            ],
+            [
+                'name' =&gt; 'email',
+                'contents' =&gt; 'sgobajkekptdrfjyotsjgkqkclueoriveqzgonfmowijkjkqvhnrmsaclakvvievmvysrjwugiwtuuizwtjnobkubvzwqqlisgkzna'
+            ],
+            [
+                'name' =&gt; 'phone',
+                'contents' =&gt; 'ssmidrhvmgeziquljkmwunkikrmcbmwcisddhzqiakuubuqqkfpmdwgovzxjxomtsofdqueuskkzxdzjwiqkxgltmnbavwjkkpwsimiliiocffpwnnkiyfdshaolpootowjiiwcrjkcifwscmsfinhz'
+            ],
+            [
+                'name' =&gt; 'position',
+                'contents' =&gt; 'xixbysaxgxazrxjtaevmulbqbmufrlvustkuhjxxdkqdhczvxgaddktikbigvmzmtucmbiapjhzmsovsgqmwvtqgapbcemasfbahvqejtbayqyykwdgqobiyzpxvjlgjjlriuhjpfawlrtwtzcguwpqkohtrpkxobyjgrhdakudtuyesvycvfefsftxfnespmkthocmxwdmxbmccqhbewtstbsfvxk'
+            ],
+            [
+                'name' =&gt; 'years_of_experience',
+                'contents' =&gt; '0'
+            ],
+            [
+                'name' =&gt; 'salary_from',
+                'contents' =&gt; '0'
+            ],
+            [
+                'name' =&gt; 'salary_to',
+                'contents' =&gt; '5'
+            ],
+            [
+                'name' =&gt; 'linkedin_url',
+                'contents' =&gt; 'thgaqiojjflfcagcwqypaxrfindighabqixfljbqkdwjxdmnygnhwuvexliabagmmhtevjirlultzdfyrypgekvudbyfllyoqktdcxeockcrthxdcdxaqaexjiyshfxikresoszvwgxkxqbwjrhnuiyreplhsccdifgvrpbacmkrlmtui'
+            ],
+            [
+                'name' =&gt; 'status',
+                'contents' =&gt; 'rejected'
+            ],
+            [
+                'name' =&gt; 'skills[]',
+                'contents' =&gt; 'quidem'
+            ],
+            [
+                'name' =&gt; 'cv',
+                'contents' =&gt; fopen('/tmp/phpef5ls6', 'r')
+            ],
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -930,7 +1016,7 @@ fetch(url, {
                 <input type="text"
                name="first_name"
                data-endpoint="POSTapi-v1-candidates"
-               value="pccmbcevrlyvufnkucebjxfahvwyerrnivjchmuyzrompqngbdvqcgnqjtbdvxhwdfryfzsirrskhqxffenhggpjumkjgm"
+               value="fnffotqyjptogltzdrqdgpwsqdfmdvhsdriaurutchneoestjtfkgmhgcwobxjdmhltjcrq"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -940,7 +1026,7 @@ fetch(url, {
                 <input type="text"
                name="last_name"
                data-endpoint="POSTapi-v1-candidates"
-               value="ubjemizcmteknlfsplcnmlfqlsiqiwkcuhtfaycrivswnnymhkweopxgtndtp"
+               value="ceufuhydyecxkoztgooqsetornlhvzxccvqgsyytrdijddvectqqdv"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -950,7 +1036,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-v1-candidates"
-               value="tptgudiq"
+               value="sgobajkekptdrfjyotsjgkqkclueoriveqzgonfmowijkjkqvhnrmsaclakvvievmvysrjwugiwtuuizwtjnobkubvzwqqlisgkzna"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address. Must not be greater than 255 characters.</p>
@@ -960,7 +1046,7 @@ fetch(url, {
                 <input type="text"
                name="phone"
                data-endpoint="POSTapi-v1-candidates"
-               value="amiuiwsyvyxdyltcxpcczamslmjwooxxxtcndpdcirdejohappizwwqbxtuvpdqkojutsplhcvjneylfdodwldsxcayejkaquofcfvmftzkvbvohzrbafiwqyufcosfhkfxgkfqtsxtzjxbbmqexvkgpiniwemgawphggmgjfpdxqhpggpedevfnpchvocrhsikepndtimybwzeyxwewsslwopwevvquab"
+               value="ssmidrhvmgeziquljkmwunkikrmcbmwcisddhzqiakuubuqqkfpmdwgovzxjxomtsofdqueuskkzxdzjwiqkxgltmnbavwjkkpwsimiliiocffpwnnkiyfdshaolpootowjiiwcrjkcifwscmsfinhz"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -970,7 +1056,7 @@ fetch(url, {
                 <input type="text"
                name="position"
                data-endpoint="POSTapi-v1-candidates"
-               value="izkzrajmgbnxdyfenidptnvoifsuimzrswrzcrlxhobjszdbawlhvtrginsoufmjcioao"
+               value="xixbysaxgxazrxjtaevmulbqbmufrlvustkuhjxxdkqdhczvxgaddktikbigvmzmtucmbiapjhzmsovsgqmwvtqgapbcemasfbahvqejtbayqyykwdgqobiyzpxvjlgjjlriuhjpfawlrtwtzcguwpqkohtrpkxobyjgrhdakudtuyesvycvfefsftxfnespmkthocmxwdmxbmccqhbewtstbsfvxk"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1000,7 +1086,7 @@ fetch(url, {
                 <input type="number"
                name="salary_to"
                data-endpoint="POSTapi-v1-candidates"
-               value="9"
+               value="5"
                data-component="body" hidden>
     <br>
 
@@ -1010,7 +1096,7 @@ fetch(url, {
                 <input type="text"
                name="linkedin_url"
                data-endpoint="POSTapi-v1-candidates"
-               value="tqqtchyjdtnnhiewnhgsmbhxgqaqgasoobvzyjbgigoenrubytranqdvxmkyiygcviwmqvvgekjnmqkovpptqoaisjnwmemxslqhtthertyzluhgqcsydfoa"
+               value="thgaqiojjflfcagcwqypaxrfindighabqixfljbqkdwjxdmnygnhwuvexliabagmmhtevjirlultzdfyrypgekvudbyfllyoqktdcxeockcrthxdcdxaqaexjiyshfxikresoszvwgxkxqbwjrhnuiyreplhsccdifgvrpbacmkrlmtui"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1030,7 +1116,7 @@ fetch(url, {
                 <input type="text"
                name="status"
                data-endpoint="POSTapi-v1-candidates"
-               value="initial"
+               value="rejected"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>initial</code>, <code>first_contact</code>, <code>interview</code>, <code>tech_assignment</code>, <code>rejected</code>, or <code>hired</code>.</p>
@@ -1082,6 +1168,21 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8008/api/v1/candidates/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -1231,17 +1332,17 @@ access-control-allow-origin: *
     "http://localhost:8008/api/v1/candidates/1" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "first_name=gtbbmlskcgovqxivlvddylfnmdxpwzalnzdruyhauwawtlyortqhftogqwbpfyuxpxddhqrwwvsrwyrnsbsmoopb" \
-    --form "last_name=onlfehetedvhnekvesjkocllesaeyyiovaowhisairqqhzirhcbxpxuwxnzubpbiowjbepxxrdelukkcosutgxooutykzpwbwjapnuoopmjsacojifr" \
-    --form "email=lhfolbvfaeejfeempankzcfhcpvjdzidxcfoedxmfnkijkpixjxdejejwilldhvhocescuohcaohmqolzdefmgnpwpsalusxilcchreyhhwuukbpclgddqopsgbuzwothpfmrgxwdhlagtjcd" \
-    --form "phone=ohjegluuflzpneywbtzzvkciydaxeuqhwsyiiedobbbsenknxtzlqsybpdcloppzuoesuaqbjdgwjnndzlpfjuefuthqosvcredstkgwohythwelegnaqnljzzhdbqdhgrqfrbbwmlfcomlhizhdsfnimoowlqagkmwuxobzecat" \
-    --form "position=ryolyjghcozcrkasodiqjqcmesmdmbjtrgtuigomychubonvpzbyqrilrvhwdkmrjnvsrfaygzvfrhupdnfxrsoxqiwpodogyxygkeuxpckwtiosyqpuzejhtiqhuvczjqzepfftuegt" \
+    --form "first_name=yhupvtlczvmgiomdxxhurmtdsaoboogmjkwvilntc" \
+    --form "last_name=viicgzfnbvpamqzxzdesboacrvfngkeqzevoiyaosrxvsjxhkzfirmyzbkyxvdxjydduuxienrsykpcnpruotjyssuplynurzpnghwufmmebuea" \
+    --form "email=rnemoauiwihpttgblcjcocagkhbubnjydgxxsvnevzvvolnvbxsapuxqdhqlhowbommhqutyffywzbuzpdelphnxrcgricfxwusntcibojmuqtymtxmssnkrjgbhczoyvwvvruajhmblrhoxqqtatptmimaupsozoytybdobdtyfmtulqfnnjepisnwdk" \
+    --form "phone=fbkxfdigvmtzdcyngbiliqefwyymnnrqtjmuaizflfmamsdkvnoqxqvzziclfwbriiklxvhcycuetbxqceyczwafqslgvvdegchstbtbdsxhufxiuiwgrhucxzyiwhlhn" \
+    --form "position=wmlupefiopkabfaayfgqzvrpwbuxqdumeyzzqtxbarfmfnbbfepozaodevbhllrceknvxsuctcaifppyhzegugwonluqbuvspzklctmrmjeqgfrsnepitjeskrcsuymndjziuprdqzqynxcmeaqjzaqfhpadqsxvloigjmkgloyckevotcxalplikirjdwwy" \
     --form "years_of_experience=0" \
     --form "salary_from=0" \
-    --form "salary_to=20" \
-    --form "linkedin_url=fynoayysjjujwziesrfbpeabfwkdbiwvuwlaxzjzrixlazacycsyjouhuwyofbdjswlulgahfqcjnftkfmlwqpphamstvifzemyiknpmjpselxvdvbzulrxze" \
-    --form "skills[]=voluptatum" \
-    --form "cv=@/tmp/phpP4uOPp" </code></pre></div>
+    --form "salary_to=7" \
+    --form "linkedin_url=fxefdgpfodahlkueczyszyapfxpolkxsjihlybphfjzjqtojfnlby" \
+    --form "skills[]=amet" \
+    --form "cv=@/tmp/php8JZGQ7" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1255,16 +1356,16 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('first_name', 'gtbbmlskcgovqxivlvddylfnmdxpwzalnzdruyhauwawtlyortqhftogqwbpfyuxpxddhqrwwvsrwyrnsbsmoopb');
-body.append('last_name', 'onlfehetedvhnekvesjkocllesaeyyiovaowhisairqqhzirhcbxpxuwxnzubpbiowjbepxxrdelukkcosutgxooutykzpwbwjapnuoopmjsacojifr');
-body.append('email', 'lhfolbvfaeejfeempankzcfhcpvjdzidxcfoedxmfnkijkpixjxdejejwilldhvhocescuohcaohmqolzdefmgnpwpsalusxilcchreyhhwuukbpclgddqopsgbuzwothpfmrgxwdhlagtjcd');
-body.append('phone', 'ohjegluuflzpneywbtzzvkciydaxeuqhwsyiiedobbbsenknxtzlqsybpdcloppzuoesuaqbjdgwjnndzlpfjuefuthqosvcredstkgwohythwelegnaqnljzzhdbqdhgrqfrbbwmlfcomlhizhdsfnimoowlqagkmwuxobzecat');
-body.append('position', 'ryolyjghcozcrkasodiqjqcmesmdmbjtrgtuigomychubonvpzbyqrilrvhwdkmrjnvsrfaygzvfrhupdnfxrsoxqiwpodogyxygkeuxpckwtiosyqpuzejhtiqhuvczjqzepfftuegt');
+body.append('first_name', 'yhupvtlczvmgiomdxxhurmtdsaoboogmjkwvilntc');
+body.append('last_name', 'viicgzfnbvpamqzxzdesboacrvfngkeqzevoiyaosrxvsjxhkzfirmyzbkyxvdxjydduuxienrsykpcnpruotjyssuplynurzpnghwufmmebuea');
+body.append('email', 'rnemoauiwihpttgblcjcocagkhbubnjydgxxsvnevzvvolnvbxsapuxqdhqlhowbommhqutyffywzbuzpdelphnxrcgricfxwusntcibojmuqtymtxmssnkrjgbhczoyvwvvruajhmblrhoxqqtatptmimaupsozoytybdobdtyfmtulqfnnjepisnwdk');
+body.append('phone', 'fbkxfdigvmtzdcyngbiliqefwyymnnrqtjmuaizflfmamsdkvnoqxqvzziclfwbriiklxvhcycuetbxqceyczwafqslgvvdegchstbtbdsxhufxiuiwgrhucxzyiwhlhn');
+body.append('position', 'wmlupefiopkabfaayfgqzvrpwbuxqdumeyzzqtxbarfmfnbbfepozaodevbhllrceknvxsuctcaifppyhzegugwonluqbuvspzklctmrmjeqgfrsnepitjeskrcsuymndjziuprdqzqynxcmeaqjzaqfhpadqsxvloigjmkgloyckevotcxalplikirjdwwy');
 body.append('years_of_experience', '0');
 body.append('salary_from', '0');
-body.append('salary_to', '20');
-body.append('linkedin_url', 'fynoayysjjujwziesrfbpeabfwkdbiwvuwlaxzjzrixlazacycsyjouhuwyofbdjswlulgahfqcjnftkfmlwqpphamstvifzemyiknpmjpselxvdvbzulrxze');
-body.append('skills[]', 'voluptatum');
+body.append('salary_to', '7');
+body.append('linkedin_url', 'fxefdgpfodahlkueczyszyapfxpolkxsjihlybphfjzjqtojfnlby');
+body.append('skills[]', 'amet');
 body.append('cv', document.querySelector('input[name="cv"]').files[0]);
 
 fetch(url, {
@@ -1272,6 +1373,67 @@ fetch(url, {
     headers,
     body,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8008/api/v1/candidates/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'application/json',
+        ],
+        'multipart' =&gt; [
+            [
+                'name' =&gt; 'first_name',
+                'contents' =&gt; 'yhupvtlczvmgiomdxxhurmtdsaoboogmjkwvilntc'
+            ],
+            [
+                'name' =&gt; 'last_name',
+                'contents' =&gt; 'viicgzfnbvpamqzxzdesboacrvfngkeqzevoiyaosrxvsjxhkzfirmyzbkyxvdxjydduuxienrsykpcnpruotjyssuplynurzpnghwufmmebuea'
+            ],
+            [
+                'name' =&gt; 'email',
+                'contents' =&gt; 'rnemoauiwihpttgblcjcocagkhbubnjydgxxsvnevzvvolnvbxsapuxqdhqlhowbommhqutyffywzbuzpdelphnxrcgricfxwusntcibojmuqtymtxmssnkrjgbhczoyvwvvruajhmblrhoxqqtatptmimaupsozoytybdobdtyfmtulqfnnjepisnwdk'
+            ],
+            [
+                'name' =&gt; 'phone',
+                'contents' =&gt; 'fbkxfdigvmtzdcyngbiliqefwyymnnrqtjmuaizflfmamsdkvnoqxqvzziclfwbriiklxvhcycuetbxqceyczwafqslgvvdegchstbtbdsxhufxiuiwgrhucxzyiwhlhn'
+            ],
+            [
+                'name' =&gt; 'position',
+                'contents' =&gt; 'wmlupefiopkabfaayfgqzvrpwbuxqdumeyzzqtxbarfmfnbbfepozaodevbhllrceknvxsuctcaifppyhzegugwonluqbuvspzklctmrmjeqgfrsnepitjeskrcsuymndjziuprdqzqynxcmeaqjzaqfhpadqsxvloigjmkgloyckevotcxalplikirjdwwy'
+            ],
+            [
+                'name' =&gt; 'years_of_experience',
+                'contents' =&gt; '0'
+            ],
+            [
+                'name' =&gt; 'salary_from',
+                'contents' =&gt; '0'
+            ],
+            [
+                'name' =&gt; 'salary_to',
+                'contents' =&gt; '7'
+            ],
+            [
+                'name' =&gt; 'linkedin_url',
+                'contents' =&gt; 'fxefdgpfodahlkueczyszyapfxpolkxsjihlybphfjzjqtojfnlby'
+            ],
+            [
+                'name' =&gt; 'skills[]',
+                'contents' =&gt; 'amet'
+            ],
+            [
+                'name' =&gt; 'cv',
+                'contents' =&gt; fopen('/tmp/php8JZGQ7', 'r')
+            ],
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -1337,7 +1499,7 @@ fetch(url, {
                 <input type="text"
                name="first_name"
                data-endpoint="PUTapi-v1-candidates--id-"
-               value="gtbbmlskcgovqxivlvddylfnmdxpwzalnzdruyhauwawtlyortqhftogqwbpfyuxpxddhqrwwvsrwyrnsbsmoopb"
+               value="yhupvtlczvmgiomdxxhurmtdsaoboogmjkwvilntc"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1347,7 +1509,7 @@ fetch(url, {
                 <input type="text"
                name="last_name"
                data-endpoint="PUTapi-v1-candidates--id-"
-               value="onlfehetedvhnekvesjkocllesaeyyiovaowhisairqqhzirhcbxpxuwxnzubpbiowjbepxxrdelukkcosutgxooutykzpwbwjapnuoopmjsacojifr"
+               value="viicgzfnbvpamqzxzdesboacrvfngkeqzevoiyaosrxvsjxhkzfirmyzbkyxvdxjydduuxienrsykpcnpruotjyssuplynurzpnghwufmmebuea"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1357,7 +1519,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="PUTapi-v1-candidates--id-"
-               value="lhfolbvfaeejfeempankzcfhcpvjdzidxcfoedxmfnkijkpixjxdejejwilldhvhocescuohcaohmqolzdefmgnpwpsalusxilcchreyhhwuukbpclgddqopsgbuzwothpfmrgxwdhlagtjcd"
+               value="rnemoauiwihpttgblcjcocagkhbubnjydgxxsvnevzvvolnvbxsapuxqdhqlhowbommhqutyffywzbuzpdelphnxrcgricfxwusntcibojmuqtymtxmssnkrjgbhczoyvwvvruajhmblrhoxqqtatptmimaupsozoytybdobdtyfmtulqfnnjepisnwdk"
                data-component="body" hidden>
     <br>
 <p>Must be a valid email address. Must not be greater than 255 characters.</p>
@@ -1367,7 +1529,7 @@ fetch(url, {
                 <input type="text"
                name="phone"
                data-endpoint="PUTapi-v1-candidates--id-"
-               value="ohjegluuflzpneywbtzzvkciydaxeuqhwsyiiedobbbsenknxtzlqsybpdcloppzuoesuaqbjdgwjnndzlpfjuefuthqosvcredstkgwohythwelegnaqnljzzhdbqdhgrqfrbbwmlfcomlhizhdsfnimoowlqagkmwuxobzecat"
+               value="fbkxfdigvmtzdcyngbiliqefwyymnnrqtjmuaizflfmamsdkvnoqxqvzziclfwbriiklxvhcycuetbxqceyczwafqslgvvdegchstbtbdsxhufxiuiwgrhucxzyiwhlhn"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1377,7 +1539,7 @@ fetch(url, {
                 <input type="text"
                name="position"
                data-endpoint="PUTapi-v1-candidates--id-"
-               value="ryolyjghcozcrkasodiqjqcmesmdmbjtrgtuigomychubonvpzbyqrilrvhwdkmrjnvsrfaygzvfrhupdnfxrsoxqiwpodogyxygkeuxpckwtiosyqpuzejhtiqhuvczjqzepfftuegt"
+               value="wmlupefiopkabfaayfgqzvrpwbuxqdumeyzzqtxbarfmfnbbfepozaodevbhllrceknvxsuctcaifppyhzegugwonluqbuvspzklctmrmjeqgfrsnepitjeskrcsuymndjziuprdqzqynxcmeaqjzaqfhpadqsxvloigjmkgloyckevotcxalplikirjdwwy"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1407,7 +1569,7 @@ fetch(url, {
                 <input type="number"
                name="salary_to"
                data-endpoint="PUTapi-v1-candidates--id-"
-               value="20"
+               value="7"
                data-component="body" hidden>
     <br>
 
@@ -1417,7 +1579,7 @@ fetch(url, {
                 <input type="text"
                name="linkedin_url"
                data-endpoint="PUTapi-v1-candidates--id-"
-               value="fynoayysjjujwziesrfbpeabfwkdbiwvuwlaxzjzrixlazacycsyjouhuwyofbdjswlulgahfqcjnftkfmlwqpphamstvifzemyiknpmjpselxvdvbzulrxze"
+               value="fxefdgpfodahlkueczyszyapfxpolkxsjihlybphfjzjqtojfnlby"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1479,6 +1641,21 @@ fetch(url, {
     method: "DELETE",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8008/api/v1/candidates/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -1568,6 +1745,21 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8008/api/v1/skills',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -1755,7 +1947,7 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"ohcxyidgfvluqorgnzdytvnlyqcruyxwqwzkmjxtgexhrugpqhxzsdfsrfqpghkhtqnedzixzveivdqyivuxkngqsxqhyjcznqiampofkjejuzehvivceusrscezsfdmyqnoriwcxkkukjcpvyddpwdfmjvjhkzkiohsthqtzgsquodgfxocebdrpgpmwq\"
+    \"title\": \"uxhfjieapeweaolegzxxxcdpbwjmanvsvbstfyfhsjhlwxhqnzzhpjreyzxijpunqtmokbdykhkwdhlaucucpdwlqlwtrylxqupgjguzlrdifduvraxmcfwqxjmpodkxbobsfjvihmajyfcmhkhnqyhzyyqpgqnlpuveuekhidszsuhomgmgelppimfvxulxghrrpfjnzkijikikztihwcbctcifvdmlpcyqzjbjsccrnj\"
 }"
 </code></pre></div>
 
@@ -1771,7 +1963,7 @@ const headers = {
 };
 
 let body = {
-    "title": "ohcxyidgfvluqorgnzdytvnlyqcruyxwqwzkmjxtgexhrugpqhxzsdfsrfqpghkhtqnedzixzveivdqyivuxkngqsxqhyjcznqiampofkjejuzehvivceusrscezsfdmyqnoriwcxkkukjcpvyddpwdfmjvjhkzkiohsthqtzgsquodgfxocebdrpgpmwq"
+    "title": "uxhfjieapeweaolegzxxxcdpbwjmanvsvbstfyfhsjhlwxhqnzzhpjreyzxijpunqtmokbdykhkwdhlaucucpdwlqlwtrylxqupgjguzlrdifduvraxmcfwqxjmpodkxbobsfjvihmajyfcmhkhnqyhzyyqpgqnlpuveuekhidszsuhomgmgelppimfvxulxghrrpfjnzkijikikztihwcbctcifvdmlpcyqzjbjsccrnj"
 };
 
 fetch(url, {
@@ -1779,6 +1971,24 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8008/api/v1/skills',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'title' =&gt; 'uxhfjieapeweaolegzxxxcdpbwjmanvsvbstfyfhsjhlwxhqnzzhpjreyzxijpunqtmokbdykhkwdhlaucucpdwlqlwtrylxqupgjguzlrdifduvraxmcfwqxjmpodkxbobsfjvihmajyfcmhkhnqyhzyyqpgqnlpuveuekhidszsuhomgmgelppimfvxulxghrrpfjnzkijikikztihwcbctcifvdmlpcyqzjbjsccrnj',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -1829,7 +2039,7 @@ fetch(url, {
                 <input type="text"
                name="title"
                data-endpoint="POSTapi-v1-skills"
-               value="ohcxyidgfvluqorgnzdytvnlyqcruyxwqwzkmjxtgexhrugpqhxzsdfsrfqpghkhtqnedzixzveivdqyivuxkngqsxqhyjcznqiampofkjejuzehvivceusrscezsfdmyqnoriwcxkkukjcpvyddpwdfmjvjhkzkiohsthqtzgsquodgfxocebdrpgpmwq"
+               value="uxhfjieapeweaolegzxxxcdpbwjmanvsvbstfyfhsjhlwxhqnzzhpjreyzxijpunqtmokbdykhkwdhlaucucpdwlqlwtrylxqupgjguzlrdifduvraxmcfwqxjmpodkxbobsfjvihmajyfcmhkhnqyhzyyqpgqnlpuveuekhidszsuhomgmgelppimfvxulxghrrpfjnzkijikikztihwcbctcifvdmlpcyqzjbjsccrnj"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -1868,6 +2078,21 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8008/api/v1/skills/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -1964,7 +2189,7 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"qrqqugkymrprkujqvtdrfkqcsotqwjtzxyhlwvzamtlxjeqxqchjhnkhdqvdnndusbjuroijblckcqgyw\"
+    \"title\": \"khoybyvssaqzapbbkrgbrdmujpqrqthezbonmrburwayumsxhuxrdhplptjjyqxwsfkbtjwajppgwdlbohxoxusnpppvjqyzwpwmuspwhlvvqehiekyvbegrtouzmvznuomgwfwtmknjpcymlhlumtilktmuwxexwsrlofelgulksakioloqcsrnsjxgasvzjmaqdyzqjpapfdyhaxdpzswacqxssauinccqva\"
 }"
 </code></pre></div>
 
@@ -1980,7 +2205,7 @@ const headers = {
 };
 
 let body = {
-    "title": "qrqqugkymrprkujqvtdrfkqcsotqwjtzxyhlwvzamtlxjeqxqchjhnkhdqvdnndusbjuroijblckcqgyw"
+    "title": "khoybyvssaqzapbbkrgbrdmujpqrqthezbonmrburwayumsxhuxrdhplptjjyqxwsfkbtjwajppgwdlbohxoxusnpppvjqyzwpwmuspwhlvvqehiekyvbegrtouzmvznuomgwfwtmknjpcymlhlumtilktmuwxexwsrlofelgulksakioloqcsrnsjxgasvzjmaqdyzqjpapfdyhaxdpzswacqxssauinccqva"
 };
 
 fetch(url, {
@@ -1988,6 +2213,24 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8008/api/v1/skills/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'title' =&gt; 'khoybyvssaqzapbbkrgbrdmujpqrqthezbonmrburwayumsxhuxrdhplptjjyqxwsfkbtjwajppgwdlbohxoxusnpppvjqyzwpwmuspwhlvvqehiekyvbegrtouzmvznuomgwfwtmknjpcymlhlumtilktmuwxexwsrlofelgulksakioloqcsrnsjxgasvzjmaqdyzqjpapfdyhaxdpzswacqxssauinccqva',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -2053,7 +2296,7 @@ fetch(url, {
                 <input type="text"
                name="title"
                data-endpoint="PUTapi-v1-skills--id-"
-               value="qrqqugkymrprkujqvtdrfkqcsotqwjtzxyhlwvzamtlxjeqxqchjhnkhdqvdnndusbjuroijblckcqgyw"
+               value="khoybyvssaqzapbbkrgbrdmujpqrqthezbonmrburwayumsxhuxrdhplptjjyqxwsfkbtjwajppgwdlbohxoxusnpppvjqyzwpwmuspwhlvvqehiekyvbegrtouzmvznuomgwfwtmknjpcymlhlumtilktmuwxexwsrlofelgulksakioloqcsrnsjxgasvzjmaqdyzqjpapfdyhaxdpzswacqxssauinccqva"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -2092,6 +2335,21 @@ fetch(url, {
     method: "DELETE",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8008/api/v1/skills/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -2166,8 +2424,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"status\": \"first_contact\",
-    \"comment\": \"voluptatem\"
+    \"status\": \"hired\",
+    \"comment\": \"excepturi\"
 }"
 </code></pre></div>
 
@@ -2183,8 +2441,8 @@ const headers = {
 };
 
 let body = {
-    "status": "first_contact",
-    "comment": "voluptatem"
+    "status": "hired",
+    "comment": "excepturi"
 };
 
 fetch(url, {
@@ -2192,6 +2450,25 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;patch(
+    'http://localhost:8008/api/v1/candidates/1/changeStatus',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'status' =&gt; 'hired',
+            'comment' =&gt; 'excepturi',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -2253,7 +2530,7 @@ fetch(url, {
                 <input type="text"
                name="status"
                data-endpoint="PATCHapi-v1-candidates--candidate_id--changeStatus"
-               value="first_contact"
+               value="hired"
                data-component="body" hidden>
     <br>
 <p>Must be one of <code>initial</code>, <code>first_contact</code>, <code>interview</code>, <code>tech_assignment</code>, <code>rejected</code>, or <code>hired</code>.</p>
@@ -2263,7 +2540,7 @@ fetch(url, {
                 <input type="text"
                name="comment"
                data-endpoint="PATCHapi-v1-candidates--candidate_id--changeStatus"
-               value="voluptatem"
+               value="excepturi"
                data-component="body" hidden>
     <br>
 
@@ -2302,6 +2579,21 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8008/api/v1/candidates/1/skills',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -2452,6 +2744,21 @@ fetch(url, {
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8008/api/v1/candidates/1/skills',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
 </span>
 
 <span id="example-responses-POSTapi-v1-candidates--candidate_id--skills">
@@ -2540,6 +2847,21 @@ fetch(url, {
     method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8008/api/v1/candidates/1/timeline',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
 
 </span>
 
@@ -2633,6 +2955,228 @@ access-control-allow-origin: *
             </p>
                     </form>
 
+            <h2 id="endpoints-GETapi-v1-candidates-status--status-">GET api/v1/candidates/status/{status}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-candidates-status--status-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8008/api/v1/candidates/status/initial" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8008/api/v1/candidates/status/initial"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8008/api/v1/candidates/status/initial',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-candidates-status--status-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 30
+x-ratelimit-remaining: 23
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 4,
+            &quot;first_name&quot;: &quot;Emerson&quot;,
+            &quot;last_name&quot;: &quot;Zieme&quot;,
+            &quot;email&quot;: &quot;egerlach@example.com&quot;,
+            &quot;phone&quot;: &quot;848.615.4332&quot;,
+            &quot;position&quot;: &quot;Farm and Home Management Advisor&quot;,
+            &quot;years_of_experience&quot;: 9,
+            &quot;salary_from&quot;: 1250,
+            &quot;salary_to&quot;: 5870,
+            &quot;linkedin_url&quot;: &quot;http://www.metz.com/vitae-ratione-eum-cupiditate-qui&quot;,
+            &quot;status&quot;: &quot;initial&quot;,
+            &quot;skills&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;title&quot;: &quot;PHP&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;title&quot;: &quot;SQL&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;title&quot;: &quot;JavaScript&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null
+                },
+                {
+                    &quot;id&quot;: 5,
+                    &quot;title&quot;: &quot;CSS&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null
+                },
+                {
+                    &quot;id&quot;: 7,
+                    &quot;title&quot;: &quot;C#&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null
+                },
+                {
+                    &quot;id&quot;: 8,
+                    &quot;title&quot;: &quot;Swift&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null
+                },
+                {
+                    &quot;id&quot;: 9,
+                    &quot;title&quot;: &quot;Ruby&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null
+                },
+                {
+                    &quot;id&quot;: 12,
+                    &quot;title&quot;: &quot;Go&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null
+                }
+            ],
+            &quot;cv_url&quot;: &quot;http://rempel.com/&quot;,
+            &quot;created_at&quot;: &quot;2022-07-19T17:08:53.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-07-19T17:08:53.000000Z&quot;
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://localhost:8008/api/v1/candidates/status/initial?page=1&quot;,
+        &quot;last&quot;: &quot;http://localhost:8008/api/v1/candidates/status/initial?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost:8008/api/v1/candidates/status/initial?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://localhost:8008/api/v1/candidates/status/initial&quot;,
+        &quot;per_page&quot;: 15,
+        &quot;to&quot;: 1,
+        &quot;total&quot;: 1
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-candidates-status--status-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-candidates-status--status-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-candidates-status--status-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-candidates-status--status-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-candidates-status--status-"></code></pre>
+</span>
+<form id="form-GETapi-v1-candidates-status--status-" data-method="GET"
+      data-path="api/v1/candidates/status/{status}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-candidates-status--status-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-candidates-status--status-"
+                    onclick="tryItOut('GETapi-v1-candidates-status--status-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-candidates-status--status-"
+                    onclick="cancelTryOut('GETapi-v1-candidates-status--status-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-candidates-status--status-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/candidates/status/{status}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>status</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="status"
+               data-endpoint="GETapi-v1-candidates-status--status-"
+               value="initial"
+               data-component="url" hidden>
+    <br>
+<p>The status of candidate.</p>
+            </p>
+                    </form>
+
     
 
         
@@ -2641,6 +3185,7 @@ access-control-allow-origin: *
                     <div class="lang-selector">
                                                         <button type="button" class="lang-button" data-language-name="bash">bash</button>
                                                         <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                                        <button type="button" class="lang-button" data-language-name="php">php</button>
                             </div>
             </div>
 </div>

@@ -201,8 +201,8 @@ class CandidateTest extends TestCase
     {
         $candidate = Candidate::factory()->create();
         $skills = Skill::factory()->count(3)->create();
-        $response = $this->post(
-            route('api.v1.candidates.updateSkills', $candidate),
+        $response = $this->patchJson(
+            route('api.v1.candidates.update', $candidate),
             [
                 'skills' => $skills->pluck('id')->toArray(),
             ]
@@ -215,8 +215,8 @@ class CandidateTest extends TestCase
         ]);
 
         $updatedSkills = Skill::factory()->count(2)->create();
-        $response = $this->post(
-            route('api.v1.candidates.updateSkills', $candidate),
+        $response = $this->patchJson(
+            route('api.v1.candidates.update', $candidate),
             [
                 'skills' => $updatedSkills->pluck('id')->toArray(),
             ]
@@ -233,5 +233,78 @@ class CandidateTest extends TestCase
         ]);
     }
 
+    public function test_cannot_update_candidate_skills_with_invalid_skill_id(): void
+    {
+        $candidate = Candidate::factory()->create();
+        $response = $this->patchJson(
+            route('api.v1.candidates.update', $candidate),
+            [
+                'skills' => [
+                    'invalid_id',
+                ],
+            ]
+        );
+
+        $response->assertStatus(R::HTTP_UNPROCESSABLE_ENTITY);
+        $this->assertDatabaseMissing('candidate_skill', [
+            'candidate_id' => $candidate->id,
+        ]);
+    }
+
+    public function test_cannot_update_candidate_skills_with_invalid_candidate_id(): void
+    {
+        $response = $this->patchJson(
+            route('api.v1.candidates.update', 'invalid_id'),
+            [
+                'skills' => [
+                    Skill::factory()->create()->id,
+                ],
+            ]
+        );
+
+        $response->assertStatus(R::HTTP_NOT_FOUND);
+    }
+
+    public function test_cannot_create_candidate_with_invalid_email(): void
+    {
+        $candidate = [
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'email' => 'invalid_email',
+            'phone' => '+1 (555) 555-5555',
+            'years_of_experience' => 10,
+            'salary_from' => 100,
+            'salary_to' => 200,
+            'linkedin_url' => 'https://www.linkedin.com/in/johndoe',
+            'position' => 'Software Engineer',
+        ];
+
+        $response = $this->postJson(
+            route('api.v1.candidates.store'),
+            $candidate
+        );
+
+        $response->assertStatus(R::HTTP_UNPROCESSABLE_ENTITY);
+        $this->assertDatabaseMissing(
+            'candidates',
+            $candidate
+        );
+    }
+
+    public function test_cannot_update_candidate_with_invalid_email(): void
+    {
+        $candidate = Candidate::factory()->create()->toArray();
+        $candidate['email'] = 'invalid_email';
+        $response = $this->patchJson(
+            route('api.v1.candidates.update', $candidate['id']),
+            $candidate
+        );
+
+        $response->assertStatus(R::HTTP_UNPROCESSABLE_ENTITY);
+        $this->assertDatabaseMissing(
+            'candidates',
+            $candidate
+        );
+    }
 
 }

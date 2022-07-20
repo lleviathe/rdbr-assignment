@@ -48,6 +48,10 @@ class CandidateService
                 $candidate->update(['cv_url' => $this->fileService->getUrl($path)]);
             }
 
+            if (isset($input['skills'])) {
+                $candidate->skills()->sync($input['skills']);
+            }
+
             $candidate->update($input);
 
             return $candidate;
