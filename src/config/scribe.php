@@ -14,12 +14,12 @@ return [
     /*
      * A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
      */
-    'description' => '',
+    'description' => 'Simple recruitment API service made as Redberry test assignment.',
 
     /*
      * The base URL displayed in the docs. If this is empty, Scribe will use the value of config('app.url').
      */
-    'base_url' => 'http://localhost:8008/',
+    'base_url' => null,
 
     /*
      * Tell Scribe what routes to generate documentation for.
@@ -270,6 +270,7 @@ INTRO
     'example_languages' => [
         'bash',
         'javascript',
+        'php'
     ],
 
     /*

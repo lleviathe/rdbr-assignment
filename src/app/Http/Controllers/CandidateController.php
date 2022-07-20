@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\RecruitmentStatus;
 use App\Http\Requests\Candidate\ChangeCandidateStatusRequest;
 use App\Http\Requests\Candidate\StoreCandidateRequest;
 use App\Http\Requests\Candidate\UpdateCandidateRequest;
@@ -29,13 +30,20 @@ class CandidateController extends Controller
 
     public function store(StoreCandidateRequest $request): JsonResponse
     {
-        $candidate = $this->service->create($request->validated(), $request->file('cv'));
+        $candidate = $this->service->create($request->validated());
 
         if (!$candidate) {
             return response()->json(['message' => 'Failed to create candidate'], R::HTTP_INTERNAL_SERVER_ERROR);
         }
 
         return CandidateResource::make($candidate)->response()->setStatusCode(R::HTTP_CREATED);
+    }
+
+    public function getByStatus(Candidate $candidate, RecruitmentStatus $status): JsonResponse
+    {
+        $candidates = $candidate->where('status', $status)->paginate();
+
+        return CandidateResource::collection($candidates)->response();
     }
 
     public function show(Candidate $candidate): JsonResponse

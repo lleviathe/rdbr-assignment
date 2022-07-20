@@ -16,15 +16,18 @@ class CandidateService
     }
 
     // Input array may be replaced with DTOs after refactoring.
-    public function create(array $input, UploadedFile $file): Candidate|bool
+    public function create(array $input): Candidate|bool
     {
         DB::beginTransaction();
 
         try {
             $candidate = Candidate::create($input);
-            $path = $this->fileService->save($file, sprintf('/cvs/%s', $candidate->id));
 
-            $candidate->update(['cv_url' => $this->fileService->getUrl($path)]);
+            if (isset($input['cv']) && $input['cv'] instanceof UploadedFile) {
+                $path = $this->fileService->save($input['cv'], sprintf('/cvs/%s', $candidate->id));
+
+                $candidate->update(['cv_url' => $this->fileService->getUrl($path)]);
+            }
 
             DB::commit();
 

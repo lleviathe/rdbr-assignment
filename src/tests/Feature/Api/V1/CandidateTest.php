@@ -44,7 +44,20 @@ class CandidateTest extends TestCase
         ]);
     }
 
-    public function test_can_store_candidate(): void
+    public function test_can_retrieve_candidates_by_status(): void
+    {
+        Candidate::factory()->create(['status' => RecruitmentStatus::INITIAL->value]);
+
+        $response = $this->getJson(
+            route('api.v1.candidates.getByStatus', ['status' => RecruitmentStatus::INITIAL->value])
+        );
+
+        $response->assertStatus(200);
+        $response->assertJsonPath('data.0.id', 1);
+        $response->assertJsonPath('data.0.status', RecruitmentStatus::INITIAL->value);
+    }
+
+    public function test_can_store_candidate_with_cv(): void
     {
         Storage::fake();
 
@@ -83,6 +96,37 @@ class CandidateTest extends TestCase
         );
         Storage::assertExists(
             'cvs/' . $response->json('id') . '/cv.pdf'
+        );
+    }
+
+    public function test_can_store_candidate(): void
+    {
+        $candidate = [
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'email' => 'test@example.com',
+            'phone' => '+1 (555) 555-5555',
+            'years_of_experience' => 10,
+            'salary_from' => 100,
+            'salary_to' => 200,
+            'linkedin_url' => 'https://www.linkedin.com/in/johndoe',
+            'position' => 'Software Engineer',
+        ];
+
+        $response = $this->postJson(
+            route('api.v1.candidates.store'),
+            $candidate
+        );
+
+        $response->assertStatus(R::HTTP_CREATED);
+        $this->assertDatabaseHas(
+            'candidates',
+            array_merge(
+                $candidate,
+                [
+                    'status' => RecruitmentStatus::INITIAL,
+                ]
+            )
         );
     }
 
