@@ -25,6 +25,14 @@
   Kubernetes
 - [ ] Use Pest - a nice testing framework for PHP
 
+## Initial configuration:
+
+You need to configure the environment variables in your project's `.env` file. You can find the example in the
+`.env.example` file. There are two `.env` files: one for the application and one for the docker-compose. You can
+configure the DB version, credentials and HTTP port in the `.env` file, which is located in the root of repository. For
+example, the default port for HTTP application is `8008`, you can change it by modifying the `APP_PORT` variable in
+the `.env` file.
+
 ## Start the project:
 
     docker-compose up -d
