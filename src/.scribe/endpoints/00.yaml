@@ -1,0 +1,598 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/candidates
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"first_name":"Vance","last_name":"Franecki","email":"xcrona@example.com","phone":"1-901-786-9070","position":"Laundry OR Dry-Cleaning Worker","years_of_experience":10,"salary_from":2435,"salary_to":2189,"linkedin_url":"https:\/\/www.block.com\/enim-consequatur-iure-saepe-qui-vel-doloremque-similique","status":"hired","skills":[{"id":2,"title":"SQL","created_at":null,"updated_at":null},{"id":5,"title":"CSS","created_at":null,"updated_at":null},{"id":6,"title":"Python","created_at":null,"updated_at":null},{"id":7,"title":"C#","created_at":null,"updated_at":null},{"id":8,"title":"Swift","created_at":null,"updated_at":null},{"id":11,"title":"TypeScript","created_at":null,"updated_at":null},{"id":12,"title":"Go","created_at":null,"updated_at":null}],"cv_url":"http:\/\/kerluke.org\/et-vero-et-et-sint-reprehenderit","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"},{"id":2,"first_name":"Vincenzo","last_name":"Corwin","email":"bschultz@example.org","phone":"917.257.6454","position":"Lifeguard","years_of_experience":3,"salary_from":1871,"salary_to":4222,"linkedin_url":"http:\/\/hessel.biz\/","status":"hired","skills":[{"id":1,"title":"PHP","created_at":null,"updated_at":null},{"id":2,"title":"SQL","created_at":null,"updated_at":null},{"id":3,"title":"JavaScript","created_at":null,"updated_at":null},{"id":7,"title":"C#","created_at":null,"updated_at":null},{"id":9,"title":"Ruby","created_at":null,"updated_at":null},{"id":12,"title":"Go","created_at":null,"updated_at":null}],"cv_url":"http:\/\/borer.com\/","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"},{"id":3,"first_name":"Travis","last_name":"Littel","email":"titus58@example.net","phone":"(352) 961-2956","position":"Freight Agent","years_of_experience":4,"salary_from":3827,"salary_to":5777,"linkedin_url":"http:\/\/www.weissnat.com\/eaque-nulla-quibusdam-necessitatibus-et-voluptate-qui","status":"rejected","skills":[{"id":1,"title":"PHP","created_at":null,"updated_at":null},{"id":4,"title":"HTML","created_at":null,"updated_at":null},{"id":6,"title":"Python","created_at":null,"updated_at":null},{"id":7,"title":"C#","created_at":null,"updated_at":null},{"id":9,"title":"Ruby","created_at":null,"updated_at":null},{"id":10,"title":"Kotlin","created_at":null,"updated_at":null},{"id":12,"title":"Go","created_at":null,"updated_at":null}],"cv_url":"https:\/\/www.cronin.net\/molestiae-pariatur-non-quaerat-vel-et-dolor-in","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"},{"id":4,"first_name":"Emerson","last_name":"Zieme","email":"egerlach@example.com","phone":"848.615.4332","position":"Farm and Home Management Advisor","years_of_experience":9,"salary_from":1250,"salary_to":5870,"linkedin_url":"http:\/\/www.metz.com\/vitae-ratione-eum-cupiditate-qui","status":"initial","skills":[{"id":1,"title":"PHP","created_at":null,"updated_at":null},{"id":2,"title":"SQL","created_at":null,"updated_at":null},{"id":3,"title":"JavaScript","created_at":null,"updated_at":null},{"id":5,"title":"CSS","created_at":null,"updated_at":null},{"id":7,"title":"C#","created_at":null,"updated_at":null},{"id":8,"title":"Swift","created_at":null,"updated_at":null},{"id":9,"title":"Ruby","created_at":null,"updated_at":null},{"id":12,"title":"Go","created_at":null,"updated_at":null}],"cv_url":"http:\/\/rempel.com\/","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"},{"id":5,"first_name":"Dean","last_name":"Bergstrom","email":"leuschke.oran@example.net","phone":"+1-618-975-2627","position":"Electrical and Electronic Inspector and Tester","years_of_experience":7,"salary_from":2023,"salary_to":2976,"linkedin_url":"http:\/\/bailey.net\/cumque-enim-voluptatem-quia-nemo-expedita-nulla-enim-eum","status":"first_contact","skills":[{"id":2,"title":"SQL","created_at":null,"updated_at":null},{"id":3,"title":"JavaScript","created_at":null,"updated_at":null},{"id":4,"title":"HTML","created_at":null,"updated_at":null},{"id":8,"title":"Swift","created_at":null,"updated_at":null},{"id":9,"title":"Ruby","created_at":null,"updated_at":null},{"id":12,"title":"Go","created_at":null,"updated_at":null}],"cv_url":"http:\/\/wiza.org\/error-sit-distinctio-qui-quaerat-deserunt-sint","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"},{"id":6,"first_name":"Edyth","last_name":"Fay","email":"jonatan57@example.com","phone":"651-319-7510","position":"Home Health Aide","years_of_experience":9,"salary_from":1351,"salary_to":4030,"linkedin_url":"http:\/\/www.rath.com\/possimus-magni-illo-ad-maiores-quibusdam-esse","status":"rejected","skills":[{"id":1,"title":"PHP","created_at":null,"updated_at":null},{"id":8,"title":"Swift","created_at":null,"updated_at":null},{"id":9,"title":"Ruby","created_at":null,"updated_at":null}],"cv_url":"http:\/\/www.swift.biz\/","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"},{"id":7,"first_name":"Ruby","last_name":"Harris","email":"dlangworth@example.org","phone":"+1-909-379-7318","position":"Heating Equipment Operator","years_of_experience":5,"salary_from":3457,"salary_to":2816,"linkedin_url":"http:\/\/www.tremblay.com\/aut-voluptatibus-animi-atque-ipsum-qui-occaecati-sint-tempore","status":"rejected","skills":[{"id":1,"title":"PHP","created_at":null,"updated_at":null},{"id":5,"title":"CSS","created_at":null,"updated_at":null},{"id":6,"title":"Python","created_at":null,"updated_at":null},{"id":7,"title":"C#","created_at":null,"updated_at":null},{"id":9,"title":"Ruby","created_at":null,"updated_at":null},{"id":10,"title":"Kotlin","created_at":null,"updated_at":null},{"id":12,"title":"Go","created_at":null,"updated_at":null}],"cv_url":"http:\/\/www.oberbrunner.info\/consequatur-enim-iure-fugiat-et-ex-voluptas","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"},{"id":8,"first_name":"Tad","last_name":"Hermiston","email":"schoen.jarred@example.com","phone":"916.245.3533","position":"Manager","years_of_experience":7,"salary_from":3964,"salary_to":4775,"linkedin_url":"http:\/\/medhurst.com\/dolores-molestiae-ratione-odit-est.html","status":"rejected","skills":[{"id":2,"title":"SQL","created_at":null,"updated_at":null},{"id":5,"title":"CSS","created_at":null,"updated_at":null},{"id":8,"title":"Swift","created_at":null,"updated_at":null},{"id":10,"title":"Kotlin","created_at":null,"updated_at":null},{"id":12,"title":"Go","created_at":null,"updated_at":null}],"cv_url":"https:\/\/www.schumm.com\/sequi-autem-voluptate-est-qui-nam-beatae-pariatur","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"},{"id":9,"first_name":"Greta","last_name":"Abbott","email":"kertzmann.percy@example.net","phone":"407-771-0945","position":"Chemical Technician","years_of_experience":10,"salary_from":2359,"salary_to":2642,"linkedin_url":"https:\/\/cremin.com\/fugiat-placeat-quisquam-provident-consequatur.html","status":"first_contact","skills":[{"id":1,"title":"PHP","created_at":null,"updated_at":null},{"id":3,"title":"JavaScript","created_at":null,"updated_at":null},{"id":6,"title":"Python","created_at":null,"updated_at":null},{"id":7,"title":"C#","created_at":null,"updated_at":null},{"id":8,"title":"Swift","created_at":null,"updated_at":null},{"id":9,"title":"Ruby","created_at":null,"updated_at":null}],"cv_url":"http:\/\/www.weissnat.org\/eum-et-dolor-odit","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"},{"id":10,"first_name":"Robin","last_name":"Dach","email":"pablo26@example.org","phone":"+1-442-612-4124","position":"Sports Book Writer","years_of_experience":9,"salary_from":2720,"salary_to":2727,"linkedin_url":"http:\/\/www.feest.biz\/","status":"tech_assignment","skills":[{"id":2,"title":"SQL","created_at":null,"updated_at":null},{"id":7,"title":"C#","created_at":null,"updated_at":null},{"id":8,"title":"Swift","created_at":null,"updated_at":null},{"id":9,"title":"Ruby","created_at":null,"updated_at":null},{"id":10,"title":"Kotlin","created_at":null,"updated_at":null}],"cv_url":"http:\/\/hirthe.com\/","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"}],"links":{"first":"http:\/\/localhost:8008\/api\/v1\/candidates?page=1","last":"http:\/\/localhost:8008\/api\/v1\/candidates?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8008\/api\/v1\/candidates?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8008\/api\/v1\/candidates","per_page":15,"to":10,"total":10}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '30'
+          x-ratelimit-remaining: '29'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/candidates
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: fnffotqyjptogltzdrqdgpwsqdfmdvhsdriaurutchneoestjtfkgmhgcwobxjdmhltjcrq
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: ceufuhydyecxkoztgooqsetornlhvzxccvqgsyytrdijddvectqqdv
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: true
+        example: sgobajkekptdrfjyotsjgkqkclueoriveqzgonfmowijkjkqvhnrmsaclakvvievmvysrjwugiwtuuizwtjnobkubvzwqqlisgkzna
+        type: string
+        custom: []
+      phone:
+        name: phone
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: ssmidrhvmgeziquljkmwunkikrmcbmwcisddhzqiakuubuqqkfpmdwgovzxjxomtsofdqueuskkzxdzjwiqkxgltmnbavwjkkpwsimiliiocffpwnnkiyfdshaolpootowjiiwcrjkcifwscmsfinhz
+        type: string
+        custom: []
+      position:
+        name: position
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: xixbysaxgxazrxjtaevmulbqbmufrlvustkuhjxxdkqdhczvxgaddktikbigvmzmtucmbiapjhzmsovsgqmwvtqgapbcemasfbahvqejtbayqyykwdgqobiyzpxvjlgjjlriuhjpfawlrtwtzcguwpqkohtrpkxobyjgrhdakudtuyesvycvfefsftxfnespmkthocmxwdmxbmccqhbewtstbsfvxk
+        type: string
+        custom: []
+      years_of_experience:
+        name: years_of_experience
+        description: 'Must be at least 0.'
+        required: false
+        example: 0
+        type: integer
+        custom: []
+      salary_from:
+        name: salary_from
+        description: 'Must be at least 0.'
+        required: false
+        example: 0
+        type: integer
+        custom: []
+      salary_to:
+        name: salary_to
+        description: ''
+        required: false
+        example: 5
+        type: integer
+        custom: []
+      linkedin_url:
+        name: linkedin_url
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: thgaqiojjflfcagcwqypaxrfindighabqixfljbqkdwjxdmnygnhwuvexliabagmmhtevjirlultzdfyrypgekvudbyfllyoqktdcxeockcrthxdcdxaqaexjiyshfxikresoszvwgxkxqbwjrhnuiyreplhsccdifgvrpbacmkrlmtui
+        type: string
+        custom: []
+      cv:
+        name: cv
+        description: 'Must be a file. Must not be greater than 8192 kilobytes.'
+        required: false
+        example: null
+        type: file
+        custom: []
+      status:
+        name: status
+        description: 'Must be one of <code>initial</code>, <code>first_contact</code>, <code>interview</code>, <code>tech_assignment</code>, <code>rejected</code>, or <code>hired</code>.'
+        required: false
+        example: rejected
+        type: string
+        custom: []
+      skills:
+        name: skills
+        description: ''
+        required: false
+        example:
+          - quidem
+        type: 'string[]'
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/candidates/{id}'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the candidate.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"id":1,"first_name":"Vance","last_name":"Franecki","email":"xcrona@example.com","phone":"1-901-786-9070","position":"Laundry OR Dry-Cleaning Worker","years_of_experience":10,"salary_from":2435,"salary_to":2189,"linkedin_url":"https:\/\/www.block.com\/enim-consequatur-iure-saepe-qui-vel-doloremque-similique","status":"hired","skills":[{"id":2,"title":"SQL","created_at":null,"updated_at":null},{"id":5,"title":"CSS","created_at":null,"updated_at":null},{"id":6,"title":"Python","created_at":null,"updated_at":null},{"id":7,"title":"C#","created_at":null,"updated_at":null},{"id":8,"title":"Swift","created_at":null,"updated_at":null},{"id":11,"title":"TypeScript","created_at":null,"updated_at":null},{"id":12,"title":"Go","created_at":null,"updated_at":null}],"cv_url":"http:\/\/kerluke.org\/et-vero-et-et-sint-reprehenderit","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '30'
+          x-ratelimit-remaining: '28'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/candidates/{id}'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the candidate.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: yhupvtlczvmgiomdxxhurmtdsaoboogmjkwvilntc
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: viicgzfnbvpamqzxzdesboacrvfngkeqzevoiyaosrxvsjxhkzfirmyzbkyxvdxjydduuxienrsykpcnpruotjyssuplynurzpnghwufmmebuea
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: false
+        example: rnemoauiwihpttgblcjcocagkhbubnjydgxxsvnevzvvolnvbxsapuxqdhqlhowbommhqutyffywzbuzpdelphnxrcgricfxwusntcibojmuqtymtxmssnkrjgbhczoyvwvvruajhmblrhoxqqtatptmimaupsozoytybdobdtyfmtulqfnnjepisnwdk
+        type: string
+        custom: []
+      phone:
+        name: phone
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: fbkxfdigvmtzdcyngbiliqefwyymnnrqtjmuaizflfmamsdkvnoqxqvzziclfwbriiklxvhcycuetbxqceyczwafqslgvvdegchstbtbdsxhufxiuiwgrhucxzyiwhlhn
+        type: string
+        custom: []
+      position:
+        name: position
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: wmlupefiopkabfaayfgqzvrpwbuxqdumeyzzqtxbarfmfnbbfepozaodevbhllrceknvxsuctcaifppyhzegugwonluqbuvspzklctmrmjeqgfrsnepitjeskrcsuymndjziuprdqzqynxcmeaqjzaqfhpadqsxvloigjmkgloyckevotcxalplikirjdwwy
+        type: string
+        custom: []
+      years_of_experience:
+        name: years_of_experience
+        description: 'Must be at least 0.'
+        required: false
+        example: 0
+        type: integer
+        custom: []
+      salary_from:
+        name: salary_from
+        description: 'Must be at least 0.'
+        required: false
+        example: 0
+        type: integer
+        custom: []
+      salary_to:
+        name: salary_to
+        description: ''
+        required: false
+        example: 7
+        type: integer
+        custom: []
+      linkedin_url:
+        name: linkedin_url
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: fxefdgpfodahlkueczyszyapfxpolkxsjihlybphfjzjqtojfnlby
+        type: string
+        custom: []
+      cv:
+        name: cv
+        description: 'Must be a file. Must not be greater than 8192 kilobytes.'
+        required: false
+        example: null
+        type: file
+        custom: []
+      skills:
+        name: skills
+        description: ''
+        required: false
+        example:
+          - amet
+        type: 'string[]'
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/candidates/{id}'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the candidate.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/skills
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"title":"PHP","created_at":null,"updated_at":null},{"id":2,"title":"SQL","created_at":null,"updated_at":null},{"id":3,"title":"JavaScript","created_at":null,"updated_at":null},{"id":4,"title":"HTML","created_at":null,"updated_at":null},{"id":5,"title":"CSS","created_at":null,"updated_at":null},{"id":6,"title":"Python","created_at":null,"updated_at":null},{"id":7,"title":"C#","created_at":null,"updated_at":null},{"id":8,"title":"Swift","created_at":null,"updated_at":null},{"id":9,"title":"Ruby","created_at":null,"updated_at":null},{"id":10,"title":"Kotlin","created_at":null,"updated_at":null},{"id":11,"title":"TypeScript","created_at":null,"updated_at":null},{"id":12,"title":"Go","created_at":null,"updated_at":null}],"links":{"first":"http:\/\/localhost:8008\/api\/v1\/skills?page=1","last":"http:\/\/localhost:8008\/api\/v1\/skills?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8008\/api\/v1\/skills?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8008\/api\/v1\/skills","per_page":15,"to":12,"total":12}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '30'
+          x-ratelimit-remaining: '27'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/skills
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: uxhfjieapeweaolegzxxxcdpbwjmanvsvbstfyfhsjhlwxhqnzzhpjreyzxijpunqtmokbdykhkwdhlaucucpdwlqlwtrylxqupgjguzlrdifduvraxmcfwqxjmpodkxbobsfjvihmajyfcmhkhnqyhzyyqpgqnlpuveuekhidszsuhomgmgelppimfvxulxghrrpfjnzkijikikztihwcbctcifvdmlpcyqzjbjsccrnj
+        type: string
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/skills/{id}'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the skill.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"id":1,"title":"PHP","created_at":null,"updated_at":null}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '30'
+          x-ratelimit-remaining: '26'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/skills/{id}'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the skill.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: khoybyvssaqzapbbkrgbrdmujpqrqthezbonmrburwayumsxhuxrdhplptjjyqxwsfkbtjwajppgwdlbohxoxusnpppvjqyzwpwmuspwhlvvqehiekyvbegrtouzmvznuomgwfwtmknjpcymlhlumtilktmuwxexwsrlofelgulksakioloqcsrnsjxgasvzjmaqdyzqjpapfdyhaxdpzswacqxssauinccqva
+        type: string
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/skills/{id}'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the skill.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/candidates/{candidate_id}/changeStatus'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      candidate_id:
+        name: candidate_id
+        description: 'The ID of the candidate.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters:
+      status:
+        name: status
+        description: 'Must be one of <code>initial</code>, <code>first_contact</code>, <code>interview</code>, <code>tech_assignment</code>, <code>rejected</code>, or <code>hired</code>.'
+        required: false
+        example: hired
+        type: string
+        custom: []
+      comment:
+        name: comment
+        description: ''
+        required: false
+        example: excepturi
+        type: string
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/candidates/{candidate_id}/skills'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      candidate_id:
+        name: candidate_id
+        description: 'The ID of the candidate.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '[{"id":2,"title":"SQL","created_at":null,"updated_at":null},{"id":5,"title":"CSS","created_at":null,"updated_at":null},{"id":6,"title":"Python","created_at":null,"updated_at":null},{"id":7,"title":"C#","created_at":null,"updated_at":null},{"id":8,"title":"Swift","created_at":null,"updated_at":null},{"id":11,"title":"TypeScript","created_at":null,"updated_at":null},{"id":12,"title":"Go","created_at":null,"updated_at":null}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '30'
+          x-ratelimit-remaining: '25'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/candidates/{candidate_id}/skills'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      candidate_id:
+        name: candidate_id
+        description: 'The ID of the candidate.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/candidates/{candidate_id}/timeline'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      candidate_id:
+        name: candidate_id
+        description: 'The ID of the candidate.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '[{"id":1,"candidate_id":1,"status_before":"first_contact","status_after":"initial","comment":"Facere veniam aut libero labore fugit culpa. Est illo itaque sed maiores animi dolor qui. Accusantium repellendus ut molestias consequuntur.","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"},{"id":2,"candidate_id":1,"status_before":"tech_assignment","status_after":"first_contact","comment":"Molestiae assumenda alias omnis ipsam. Nobis itaque doloribus et aut culpa. Cum laborum quae consectetur nemo nisi beatae voluptas. Odit maiores ad aut est. Perferendis ut autem perferendis qui.","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '30'
+          x-ratelimit-remaining: '24'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/candidates/status/{status}'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      status:
+        name: status
+        description: 'The status of candidate.'
+        required: true
+        example: initial
+        type: string
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":4,"first_name":"Emerson","last_name":"Zieme","email":"egerlach@example.com","phone":"848.615.4332","position":"Farm and Home Management Advisor","years_of_experience":9,"salary_from":1250,"salary_to":5870,"linkedin_url":"http:\/\/www.metz.com\/vitae-ratione-eum-cupiditate-qui","status":"initial","skills":[{"id":1,"title":"PHP","created_at":null,"updated_at":null},{"id":2,"title":"SQL","created_at":null,"updated_at":null},{"id":3,"title":"JavaScript","created_at":null,"updated_at":null},{"id":5,"title":"CSS","created_at":null,"updated_at":null},{"id":7,"title":"C#","created_at":null,"updated_at":null},{"id":8,"title":"Swift","created_at":null,"updated_at":null},{"id":9,"title":"Ruby","created_at":null,"updated_at":null},{"id":12,"title":"Go","created_at":null,"updated_at":null}],"cv_url":"http:\/\/rempel.com\/","created_at":"2022-07-19T17:08:53.000000Z","updated_at":"2022-07-19T17:08:53.000000Z"}],"links":{"first":"http:\/\/localhost:8008\/api\/v1\/candidates\/status\/initial?page=1","last":"http:\/\/localhost:8008\/api\/v1\/candidates\/status\/initial?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8008\/api\/v1\/candidates\/status\/initial?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost:8008\/api\/v1\/candidates\/status\/initial","per_page":15,"to":1,"total":1}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '30'
+          x-ratelimit-remaining: '23'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
