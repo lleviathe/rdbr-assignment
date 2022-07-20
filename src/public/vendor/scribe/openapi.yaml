@@ -1,0 +1,1945 @@
+openapi: 3.0.3
+info:
+  title: 'Recruitment API'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8008'
+paths:
+  /api/v1/candidates:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      first_name: Vance
+                      last_name: Franecki
+                      email: xcrona@example.com
+                      phone: 1-901-786-9070
+                      position: 'Laundry OR Dry-Cleaning Worker'
+                      years_of_experience: 10
+                      salary_from: 2435
+                      salary_to: 2189
+                      linkedin_url: 'https://www.block.com/enim-consequatur-iure-saepe-qui-vel-doloremque-similique'
+                      status: hired
+                      skills:
+                        -
+                          id: 2
+                          title: SQL
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 5
+                          title: CSS
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 6
+                          title: Python
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 7
+                          title: 'C#'
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 8
+                          title: Swift
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 11
+                          title: TypeScript
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 12
+                          title: Go
+                          created_at: null
+                          updated_at: null
+                      cv_url: 'http://kerluke.org/et-vero-et-et-sint-reprehenderit'
+                      created_at: '2022-07-19T17:08:53.000000Z'
+                      updated_at: '2022-07-19T17:08:53.000000Z'
+                    -
+                      id: 2
+                      first_name: Vincenzo
+                      last_name: Corwin
+                      email: bschultz@example.org
+                      phone: 917.257.6454
+                      position: Lifeguard
+                      years_of_experience: 3
+                      salary_from: 1871
+                      salary_to: 4222
+                      linkedin_url: 'http://hessel.biz/'
+                      status: hired
+                      skills:
+                        -
+                          id: 1
+                          title: PHP
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 2
+                          title: SQL
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 3
+                          title: JavaScript
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 7
+                          title: 'C#'
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 9
+                          title: Ruby
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 12
+                          title: Go
+                          created_at: null
+                          updated_at: null
+                      cv_url: 'http://borer.com/'
+                      created_at: '2022-07-19T17:08:53.000000Z'
+                      updated_at: '2022-07-19T17:08:53.000000Z'
+                    -
+                      id: 3
+                      first_name: Travis
+                      last_name: Littel
+                      email: titus58@example.net
+                      phone: '(352) 961-2956'
+                      position: 'Freight Agent'
+                      years_of_experience: 4
+                      salary_from: 3827
+                      salary_to: 5777
+                      linkedin_url: 'http://www.weissnat.com/eaque-nulla-quibusdam-necessitatibus-et-voluptate-qui'
+                      status: rejected
+                      skills:
+                        -
+                          id: 1
+                          title: PHP
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 4
+                          title: HTML
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 6
+                          title: Python
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 7
+                          title: 'C#'
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 9
+                          title: Ruby
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 10
+                          title: Kotlin
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 12
+                          title: Go
+                          created_at: null
+                          updated_at: null
+                      cv_url: 'https://www.cronin.net/molestiae-pariatur-non-quaerat-vel-et-dolor-in'
+                      created_at: '2022-07-19T17:08:53.000000Z'
+                      updated_at: '2022-07-19T17:08:53.000000Z'
+                    -
+                      id: 4
+                      first_name: Emerson
+                      last_name: Zieme
+                      email: egerlach@example.com
+                      phone: 848.615.4332
+                      position: 'Farm and Home Management Advisor'
+                      years_of_experience: 9
+                      salary_from: 1250
+                      salary_to: 5870
+                      linkedin_url: 'http://www.metz.com/vitae-ratione-eum-cupiditate-qui'
+                      status: initial
+                      skills:
+                        -
+                          id: 1
+                          title: PHP
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 2
+                          title: SQL
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 3
+                          title: JavaScript
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 5
+                          title: CSS
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 7
+                          title: 'C#'
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 8
+                          title: Swift
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 9
+                          title: Ruby
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 12
+                          title: Go
+                          created_at: null
+                          updated_at: null
+                      cv_url: 'http://rempel.com/'
+                      created_at: '2022-07-19T17:08:53.000000Z'
+                      updated_at: '2022-07-19T17:08:53.000000Z'
+                    -
+                      id: 5
+                      first_name: Dean
+                      last_name: Bergstrom
+                      email: leuschke.oran@example.net
+                      phone: +1-618-975-2627
+                      position: 'Electrical and Electronic Inspector and Tester'
+                      years_of_experience: 7
+                      salary_from: 2023
+                      salary_to: 2976
+                      linkedin_url: 'http://bailey.net/cumque-enim-voluptatem-quia-nemo-expedita-nulla-enim-eum'
+                      status: first_contact
+                      skills:
+                        -
+                          id: 2
+                          title: SQL
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 3
+                          title: JavaScript
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 4
+                          title: HTML
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 8
+                          title: Swift
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 9
+                          title: Ruby
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 12
+                          title: Go
+                          created_at: null
+                          updated_at: null
+                      cv_url: 'http://wiza.org/error-sit-distinctio-qui-quaerat-deserunt-sint'
+                      created_at: '2022-07-19T17:08:53.000000Z'
+                      updated_at: '2022-07-19T17:08:53.000000Z'
+                    -
+                      id: 6
+                      first_name: Edyth
+                      last_name: Fay
+                      email: jonatan57@example.com
+                      phone: 651-319-7510
+                      position: 'Home Health Aide'
+                      years_of_experience: 9
+                      salary_from: 1351
+                      salary_to: 4030
+                      linkedin_url: 'http://www.rath.com/possimus-magni-illo-ad-maiores-quibusdam-esse'
+                      status: rejected
+                      skills:
+                        -
+                          id: 1
+                          title: PHP
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 8
+                          title: Swift
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 9
+                          title: Ruby
+                          created_at: null
+                          updated_at: null
+                      cv_url: 'http://www.swift.biz/'
+                      created_at: '2022-07-19T17:08:53.000000Z'
+                      updated_at: '2022-07-19T17:08:53.000000Z'
+                    -
+                      id: 7
+                      first_name: Ruby
+                      last_name: Harris
+                      email: dlangworth@example.org
+                      phone: +1-909-379-7318
+                      position: 'Heating Equipment Operator'
+                      years_of_experience: 5
+                      salary_from: 3457
+                      salary_to: 2816
+                      linkedin_url: 'http://www.tremblay.com/aut-voluptatibus-animi-atque-ipsum-qui-occaecati-sint-tempore'
+                      status: rejected
+                      skills:
+                        -
+                          id: 1
+                          title: PHP
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 5
+                          title: CSS
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 6
+                          title: Python
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 7
+                          title: 'C#'
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 9
+                          title: Ruby
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 10
+                          title: Kotlin
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 12
+                          title: Go
+                          created_at: null
+                          updated_at: null
+                      cv_url: 'http://www.oberbrunner.info/consequatur-enim-iure-fugiat-et-ex-voluptas'
+                      created_at: '2022-07-19T17:08:53.000000Z'
+                      updated_at: '2022-07-19T17:08:53.000000Z'
+                    -
+                      id: 8
+                      first_name: Tad
+                      last_name: Hermiston
+                      email: schoen.jarred@example.com
+                      phone: 916.245.3533
+                      position: Manager
+                      years_of_experience: 7
+                      salary_from: 3964
+                      salary_to: 4775
+                      linkedin_url: 'http://medhurst.com/dolores-molestiae-ratione-odit-est.html'
+                      status: rejected
+                      skills:
+                        -
+                          id: 2
+                          title: SQL
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 5
+                          title: CSS
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 8
+                          title: Swift
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 10
+                          title: Kotlin
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 12
+                          title: Go
+                          created_at: null
+                          updated_at: null
+                      cv_url: 'https://www.schumm.com/sequi-autem-voluptate-est-qui-nam-beatae-pariatur'
+                      created_at: '2022-07-19T17:08:53.000000Z'
+                      updated_at: '2022-07-19T17:08:53.000000Z'
+                    -
+                      id: 9
+                      first_name: Greta
+                      last_name: Abbott
+                      email: kertzmann.percy@example.net
+                      phone: 407-771-0945
+                      position: 'Chemical Technician'
+                      years_of_experience: 10
+                      salary_from: 2359
+                      salary_to: 2642
+                      linkedin_url: 'https://cremin.com/fugiat-placeat-quisquam-provident-consequatur.html'
+                      status: first_contact
+                      skills:
+                        -
+                          id: 1
+                          title: PHP
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 3
+                          title: JavaScript
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 6
+                          title: Python
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 7
+                          title: 'C#'
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 8
+                          title: Swift
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 9
+                          title: Ruby
+                          created_at: null
+                          updated_at: null
+                      cv_url: 'http://www.weissnat.org/eum-et-dolor-odit'
+                      created_at: '2022-07-19T17:08:53.000000Z'
+                      updated_at: '2022-07-19T17:08:53.000000Z'
+                    -
+                      id: 10
+                      first_name: Robin
+                      last_name: Dach
+                      email: pablo26@example.org
+                      phone: +1-442-612-4124
+                      position: 'Sports Book Writer'
+                      years_of_experience: 9
+                      salary_from: 2720
+                      salary_to: 2727
+                      linkedin_url: 'http://www.feest.biz/'
+                      status: tech_assignment
+                      skills:
+                        -
+                          id: 2
+                          title: SQL
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 7
+                          title: 'C#'
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 8
+                          title: Swift
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 9
+                          title: Ruby
+                          created_at: null
+                          updated_at: null
+                        -
+                          id: 10
+                          title: Kotlin
+                          created_at: null
+                          updated_at: null
+                      cv_url: 'http://hirthe.com/'
+                      created_at: '2022-07-19T17:08:53.000000Z'
+                      updated_at: '2022-07-19T17:08:53.000000Z'
+                  links:
+                    first: 'http://localhost:8008/api/v1/candidates?page=1'
+                    last: 'http://localhost:8008/api/v1/candidates?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8008/api/v1/candidates?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost:8008/api/v1/candidates'
+                    per_page: 15
+                    to: 10
+                    total: 10
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        first_name: Vance
+                        last_name: Franecki
+                        email: xcrona@example.com
+                        phone: 1-901-786-9070
+                        position: 'Laundry OR Dry-Cleaning Worker'
+                        years_of_experience: 10
+                        salary_from: 2435
+                        salary_to: 2189
+                        linkedin_url: 'https://www.block.com/enim-consequatur-iure-saepe-qui-vel-doloremque-similique'
+                        status: hired
+                        skills:
+                          -
+                            id: 2
+                            title: SQL
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 5
+                            title: CSS
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 6
+                            title: Python
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 7
+                            title: 'C#'
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 8
+                            title: Swift
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 11
+                            title: TypeScript
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 12
+                            title: Go
+                            created_at: null
+                            updated_at: null
+                        cv_url: 'http://kerluke.org/et-vero-et-et-sint-reprehenderit'
+                        created_at: '2022-07-19T17:08:53.000000Z'
+                        updated_at: '2022-07-19T17:08:53.000000Z'
+                      -
+                        id: 2
+                        first_name: Vincenzo
+                        last_name: Corwin
+                        email: bschultz@example.org
+                        phone: 917.257.6454
+                        position: Lifeguard
+                        years_of_experience: 3
+                        salary_from: 1871
+                        salary_to: 4222
+                        linkedin_url: 'http://hessel.biz/'
+                        status: hired
+                        skills:
+                          -
+                            id: 1
+                            title: PHP
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 2
+                            title: SQL
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 3
+                            title: JavaScript
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 7
+                            title: 'C#'
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 9
+                            title: Ruby
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 12
+                            title: Go
+                            created_at: null
+                            updated_at: null
+                        cv_url: 'http://borer.com/'
+                        created_at: '2022-07-19T17:08:53.000000Z'
+                        updated_at: '2022-07-19T17:08:53.000000Z'
+                      -
+                        id: 3
+                        first_name: Travis
+                        last_name: Littel
+                        email: titus58@example.net
+                        phone: '(352) 961-2956'
+                        position: 'Freight Agent'
+                        years_of_experience: 4
+                        salary_from: 3827
+                        salary_to: 5777
+                        linkedin_url: 'http://www.weissnat.com/eaque-nulla-quibusdam-necessitatibus-et-voluptate-qui'
+                        status: rejected
+                        skills:
+                          -
+                            id: 1
+                            title: PHP
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 4
+                            title: HTML
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 6
+                            title: Python
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 7
+                            title: 'C#'
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 9
+                            title: Ruby
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 10
+                            title: Kotlin
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 12
+                            title: Go
+                            created_at: null
+                            updated_at: null
+                        cv_url: 'https://www.cronin.net/molestiae-pariatur-non-quaerat-vel-et-dolor-in'
+                        created_at: '2022-07-19T17:08:53.000000Z'
+                        updated_at: '2022-07-19T17:08:53.000000Z'
+                      -
+                        id: 4
+                        first_name: Emerson
+                        last_name: Zieme
+                        email: egerlach@example.com
+                        phone: 848.615.4332
+                        position: 'Farm and Home Management Advisor'
+                        years_of_experience: 9
+                        salary_from: 1250
+                        salary_to: 5870
+                        linkedin_url: 'http://www.metz.com/vitae-ratione-eum-cupiditate-qui'
+                        status: initial
+                        skills:
+                          -
+                            id: 1
+                            title: PHP
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 2
+                            title: SQL
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 3
+                            title: JavaScript
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 5
+                            title: CSS
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 7
+                            title: 'C#'
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 8
+                            title: Swift
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 9
+                            title: Ruby
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 12
+                            title: Go
+                            created_at: null
+                            updated_at: null
+                        cv_url: 'http://rempel.com/'
+                        created_at: '2022-07-19T17:08:53.000000Z'
+                        updated_at: '2022-07-19T17:08:53.000000Z'
+                      -
+                        id: 5
+                        first_name: Dean
+                        last_name: Bergstrom
+                        email: leuschke.oran@example.net
+                        phone: +1-618-975-2627
+                        position: 'Electrical and Electronic Inspector and Tester'
+                        years_of_experience: 7
+                        salary_from: 2023
+                        salary_to: 2976
+                        linkedin_url: 'http://bailey.net/cumque-enim-voluptatem-quia-nemo-expedita-nulla-enim-eum'
+                        status: first_contact
+                        skills:
+                          -
+                            id: 2
+                            title: SQL
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 3
+                            title: JavaScript
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 4
+                            title: HTML
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 8
+                            title: Swift
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 9
+                            title: Ruby
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 12
+                            title: Go
+                            created_at: null
+                            updated_at: null
+                        cv_url: 'http://wiza.org/error-sit-distinctio-qui-quaerat-deserunt-sint'
+                        created_at: '2022-07-19T17:08:53.000000Z'
+                        updated_at: '2022-07-19T17:08:53.000000Z'
+                      -
+                        id: 6
+                        first_name: Edyth
+                        last_name: Fay
+                        email: jonatan57@example.com
+                        phone: 651-319-7510
+                        position: 'Home Health Aide'
+                        years_of_experience: 9
+                        salary_from: 1351
+                        salary_to: 4030
+                        linkedin_url: 'http://www.rath.com/possimus-magni-illo-ad-maiores-quibusdam-esse'
+                        status: rejected
+                        skills:
+                          -
+                            id: 1
+                            title: PHP
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 8
+                            title: Swift
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 9
+                            title: Ruby
+                            created_at: null
+                            updated_at: null
+                        cv_url: 'http://www.swift.biz/'
+                        created_at: '2022-07-19T17:08:53.000000Z'
+                        updated_at: '2022-07-19T17:08:53.000000Z'
+                      -
+                        id: 7
+                        first_name: Ruby
+                        last_name: Harris
+                        email: dlangworth@example.org
+                        phone: +1-909-379-7318
+                        position: 'Heating Equipment Operator'
+                        years_of_experience: 5
+                        salary_from: 3457
+                        salary_to: 2816
+                        linkedin_url: 'http://www.tremblay.com/aut-voluptatibus-animi-atque-ipsum-qui-occaecati-sint-tempore'
+                        status: rejected
+                        skills:
+                          -
+                            id: 1
+                            title: PHP
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 5
+                            title: CSS
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 6
+                            title: Python
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 7
+                            title: 'C#'
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 9
+                            title: Ruby
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 10
+                            title: Kotlin
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 12
+                            title: Go
+                            created_at: null
+                            updated_at: null
+                        cv_url: 'http://www.oberbrunner.info/consequatur-enim-iure-fugiat-et-ex-voluptas'
+                        created_at: '2022-07-19T17:08:53.000000Z'
+                        updated_at: '2022-07-19T17:08:53.000000Z'
+                      -
+                        id: 8
+                        first_name: Tad
+                        last_name: Hermiston
+                        email: schoen.jarred@example.com
+                        phone: 916.245.3533
+                        position: Manager
+                        years_of_experience: 7
+                        salary_from: 3964
+                        salary_to: 4775
+                        linkedin_url: 'http://medhurst.com/dolores-molestiae-ratione-odit-est.html'
+                        status: rejected
+                        skills:
+                          -
+                            id: 2
+                            title: SQL
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 5
+                            title: CSS
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 8
+                            title: Swift
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 10
+                            title: Kotlin
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 12
+                            title: Go
+                            created_at: null
+                            updated_at: null
+                        cv_url: 'https://www.schumm.com/sequi-autem-voluptate-est-qui-nam-beatae-pariatur'
+                        created_at: '2022-07-19T17:08:53.000000Z'
+                        updated_at: '2022-07-19T17:08:53.000000Z'
+                      -
+                        id: 9
+                        first_name: Greta
+                        last_name: Abbott
+                        email: kertzmann.percy@example.net
+                        phone: 407-771-0945
+                        position: 'Chemical Technician'
+                        years_of_experience: 10
+                        salary_from: 2359
+                        salary_to: 2642
+                        linkedin_url: 'https://cremin.com/fugiat-placeat-quisquam-provident-consequatur.html'
+                        status: first_contact
+                        skills:
+                          -
+                            id: 1
+                            title: PHP
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 3
+                            title: JavaScript
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 6
+                            title: Python
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 7
+                            title: 'C#'
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 8
+                            title: Swift
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 9
+                            title: Ruby
+                            created_at: null
+                            updated_at: null
+                        cv_url: 'http://www.weissnat.org/eum-et-dolor-odit'
+                        created_at: '2022-07-19T17:08:53.000000Z'
+                        updated_at: '2022-07-19T17:08:53.000000Z'
+                      -
+                        id: 10
+                        first_name: Robin
+                        last_name: Dach
+                        email: pablo26@example.org
+                        phone: +1-442-612-4124
+                        position: 'Sports Book Writer'
+                        years_of_experience: 9
+                        salary_from: 2720
+                        salary_to: 2727
+                        linkedin_url: 'http://www.feest.biz/'
+                        status: tech_assignment
+                        skills:
+                          -
+                            id: 2
+                            title: SQL
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 7
+                            title: 'C#'
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 8
+                            title: Swift
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 9
+                            title: Ruby
+                            created_at: null
+                            updated_at: null
+                          -
+                            id: 10
+                            title: Kotlin
+                            created_at: null
+                            updated_at: null
+                        cv_url: 'http://hirthe.com/'
+                        created_at: '2022-07-19T17:08:53.000000Z'
+                        updated_at: '2022-07-19T17:08:53.000000Z'
+                    items:
+                      type: object
+                  links:
+                    type: object
+                    example:
+                      first: 'http://localhost:8008/api/v1/candidates?page=1'
+                      last: 'http://localhost:8008/api/v1/candidates?page=1'
+                      prev: null
+                      next: null
+                  meta:
+                    type: object
+                    example:
+                      current_page: 1
+                      from: 1
+                      last_page: 1
+                      links:
+                        -
+                          url: null
+                          label: '&laquo; Previous'
+                          active: false
+                        -
+                          url: 'http://localhost:8008/api/v1/candidates?page=1'
+                          label: '1'
+                          active: true
+                        -
+                          url: null
+                          label: 'Next &raquo;'
+                          active: false
+                      path: 'http://localhost:8008/api/v1/candidates'
+                      per_page: 15
+                      to: 10
+                      total: 10
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: aqehxpoewqququujccctauezdsexhgsenrsykgkeypodqeexvohhynklsevdwfklbxadfpfxbluzjaybhaokrqypvmldnfcgyqdvwwxehyuoyzuzrecnpyltpevrglzvmmqpfspafxnyngecvwazskwjuoudfijnh
+                last_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: xoilafnmuudyafxgcqcktqcvmdgttwjeeithmyjwrenbhzxzcikusyruujtwojiaytvcsjmjkwtrcpwojkcwpsgdpkpizxanhebeayfqlxeehohgkpwmnhnixlbgqqwygrjdzvrrbpbhhdftagdjyniytuzxfvzzpsqrc
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: nppcgyoqgnoojgfgeysntuvkedathxslncqthhuorcnaykqfjyezwudonhxgfzpsnmlabzhuzvirqywjecuaihpjlyewyrzvacspmbxqhvzgipkchmvugzbphwuoepgbgrrjderqixjkutepayvodqqivyooxdrukjnpjjtqdjpejlbfystcrirotabweecuebsofwfemekzadbseejiqomrbmwh
+                phone:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: cixolqlzuiekxvrdkpiahiwckqhntanipwhusnasasrzcvvpwbwgrjhdljrxrgsfxkfizqbknpsfiqczpwubnxohoikjrkupggljczxsddbdllqoqytdxuiophdixtmtiaqewdkcoacbxogpsouwhhexbmpkswmmcdoocjciujgenjbpnsipbodppynlcroomhgnoijmwlljidnhzcgsfvx
+                position:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: rqehvfukwalhbtbybefghvnodakviaofejrfpsfiydcqavmfyqykaucvsergbwyafxqpycbmjrolhdavafrjfeprsznmaeeyxococjvluvwssibmhbdseltmkwfbmpmgtsnqtlryrbhxvlirkgepzaijcblpgmuwsfqong
+                years_of_experience:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 0
+                salary_from:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 0
+                salary_to:
+                  type: integer
+                  description: ''
+                  example: 16
+                linkedin_url:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: fpuolqpibgleioxqfcrxmwxxreywclmkepildchgsrldqtpcktiwiirbuvytmmetdcdmjkmhmxklhwxfvffnonjgeabtezvhuqbcwyewempwcolrrpgrspqgopqvdahbaotkzwzhdzizkiksfuymlvdfmbblmiybncsknqlqdouekkwgslceqamcawzidncjilip
+                cv:
+                  type: string
+                  format: binary
+                  description: 'Must be a file. Must not be greater than 8192 kilobytes.'
+                status:
+                  type: string
+                  description: 'Must be one of <code>initial</code>, <code>first_contact</code>, <code>interview</code>, <code>tech_assignment</code>, <code>rejected</code>, or <code>hired</code>.'
+                  example: interview
+                skills:
+                  type: array
+                  description: ''
+                  example:
+                    - laudantium
+                  items:
+                    type: string
+              required:
+                - first_name
+                - last_name
+                - email
+                - phone
+                - position
+      security: []
+  '/api/v1/candidates/{id}':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  first_name: Vance
+                  last_name: Franecki
+                  email: xcrona@example.com
+                  phone: 1-901-786-9070
+                  position: 'Laundry OR Dry-Cleaning Worker'
+                  years_of_experience: 10
+                  salary_from: 2435
+                  salary_to: 2189
+                  linkedin_url: 'https://www.block.com/enim-consequatur-iure-saepe-qui-vel-doloremque-similique'
+                  status: hired
+                  skills:
+                    -
+                      id: 2
+                      title: SQL
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 5
+                      title: CSS
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 6
+                      title: Python
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 7
+                      title: 'C#'
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 8
+                      title: Swift
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 11
+                      title: TypeScript
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 12
+                      title: Go
+                      created_at: null
+                      updated_at: null
+                  cv_url: 'http://kerluke.org/et-vero-et-et-sint-reprehenderit'
+                  created_at: '2022-07-19T17:08:53.000000Z'
+                  updated_at: '2022-07-19T17:08:53.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  first_name:
+                    type: string
+                    example: Vance
+                  last_name:
+                    type: string
+                    example: Franecki
+                  email:
+                    type: string
+                    example: xcrona@example.com
+                  phone:
+                    type: string
+                    example: 1-901-786-9070
+                  position:
+                    type: string
+                    example: 'Laundry OR Dry-Cleaning Worker'
+                  years_of_experience:
+                    type: integer
+                    example: 10
+                  salary_from:
+                    type: integer
+                    example: 2435
+                  salary_to:
+                    type: integer
+                    example: 2189
+                  linkedin_url:
+                    type: string
+                    example: 'https://www.block.com/enim-consequatur-iure-saepe-qui-vel-doloremque-similique'
+                  status:
+                    type: string
+                    example: hired
+                  skills:
+                    type: array
+                    example:
+                      -
+                        id: 2
+                        title: SQL
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 5
+                        title: CSS
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 6
+                        title: Python
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 7
+                        title: 'C#'
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 8
+                        title: Swift
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 11
+                        title: TypeScript
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 12
+                        title: Go
+                        created_at: null
+                        updated_at: null
+                    items:
+                      type: object
+                  cv_url:
+                    type: string
+                    example: 'http://kerluke.org/et-vero-et-et-sint-reprehenderit'
+                  created_at:
+                    type: string
+                    example: '2022-07-19T17:08:53.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2022-07-19T17:08:53.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: lbflbempexpeujxjicvrvkdiimhpyzyvcfwrquqqovqexyomzbxkymoblagjicrkvpudwkhjosmjzkmbodqlvkjkopyabawuthmovpkoxqhdhtsaedenkybfyeikfocfhilvpnfxpwem
+                last_name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: ubtsqrsmnjkiotcfnsiyfupvcccmrepvbfpafxdgrszmnzxlykkjqetvnizllcttqutjpnxjseynzha
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: crzynngvvyewtkovhmpxopnrrzthirfvxqj
+                phone:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: agxkrfknifyatpzmamccsrnkvimzxzsedlqdyheupmrpqqamymqcmbwikxzgudcnygcruffuojsnnjaxquswbjmomgfemwwnrsqmlcyyaqthbvgxsxaajowjqvibvemzcqaojzrdbhalnjrmrwvkekodgkgsvunhrivtvdsktfucmbbnnwxeyyiwdr
+                position:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: tezvntwadrmwdkajnmdldvulznvqyrnfzkadtrobahdvkzifmqokvdcebakqzuwdqrjyeohhkxgmgkmmdbsipmvdatxpfvnpqeivmigvvswijrgsagwkwrunopzxc
+                years_of_experience:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 0
+                salary_from:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 0
+                salary_to:
+                  type: integer
+                  description: ''
+                  example: 1
+                linkedin_url:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: mrvntkjzurjsmgmksvbheejomyypwkfsorycaidetdkroubmxvutsytgpscbehshzvtaupgyezgsxnnjnwkckqzusaoqyveglkzgunslxjqeauglszorouocirfneqjxzsevwtccmnlxxskfomuarfpnppmggoprnmucvwhntyvqpojijbtzqnbkcvrhrjnlqgoquauprtepftzkouvlazklutzwdaccjbgzw
+                cv:
+                  type: string
+                  format: binary
+                  description: 'Must be a file. Must not be greater than 8192 kilobytes.'
+                skills:
+                  type: array
+                  description: ''
+                  example:
+                    - totam
+                  items:
+                    type: string
+      security: []
+    delete:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the candidate.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/skills:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      title: PHP
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 2
+                      title: SQL
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 3
+                      title: JavaScript
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 4
+                      title: HTML
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 5
+                      title: CSS
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 6
+                      title: Python
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 7
+                      title: 'C#'
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 8
+                      title: Swift
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 9
+                      title: Ruby
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 10
+                      title: Kotlin
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 11
+                      title: TypeScript
+                      created_at: null
+                      updated_at: null
+                    -
+                      id: 12
+                      title: Go
+                      created_at: null
+                      updated_at: null
+                  links:
+                    first: 'http://localhost:8008/api/v1/skills?page=1'
+                    last: 'http://localhost:8008/api/v1/skills?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8008/api/v1/skills?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost:8008/api/v1/skills'
+                    per_page: 15
+                    to: 12
+                    total: 12
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        title: PHP
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 2
+                        title: SQL
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 3
+                        title: JavaScript
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 4
+                        title: HTML
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 5
+                        title: CSS
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 6
+                        title: Python
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 7
+                        title: 'C#'
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 8
+                        title: Swift
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 9
+                        title: Ruby
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 10
+                        title: Kotlin
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 11
+                        title: TypeScript
+                        created_at: null
+                        updated_at: null
+                      -
+                        id: 12
+                        title: Go
+                        created_at: null
+                        updated_at: null
+                    items:
+                      type: object
+                  links:
+                    type: object
+                    example:
+                      first: 'http://localhost:8008/api/v1/skills?page=1'
+                      last: 'http://localhost:8008/api/v1/skills?page=1'
+                      prev: null
+                      next: null
+                  meta:
+                    type: object
+                    example:
+                      current_page: 1
+                      from: 1
+                      last_page: 1
+                      links:
+                        -
+                          url: null
+                          label: '&laquo; Previous'
+                          active: false
+                        -
+                          url: 'http://localhost:8008/api/v1/skills?page=1'
+                          label: '1'
+                          active: true
+                        -
+                          url: null
+                          label: 'Next &raquo;'
+                          active: false
+                      path: 'http://localhost:8008/api/v1/skills'
+                      per_page: 15
+                      to: 12
+                      total: 12
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: fntdktvvyecaznrtpxseddjdgqyxdtxdnghfigjpwpvwpqcxulggadbgxnlrlvhimnvbtxmuhaczyfpbmtwrafzczjylblakazbacwoolcugfkkaqcdnrszmxzafzcpnsrlctiy
+              required:
+                - title
+      security: []
+  '/api/v1/skills/{id}':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  title: PHP
+                  created_at: null
+                  updated_at: null
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  title:
+                    type: string
+                    example: PHP
+                  created_at:
+                    type: string
+                    example: null
+                  updated_at:
+                    type: string
+                    example: null
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: nhfjhvvnyzatdnjecspsjsvyikabarrxgdjsiqdbvdeshzsmjtgoywrglaofmxuafgqjkkwnqgtqtfdrapulcrmsdiohycvwrfrfgkktvnciahfkvowwcqaehwlrafcseelgytnmpqgtcvqzdenuoz
+              required:
+                - title
+      security: []
+    delete:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the skill.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/candidates/{candidate_id}/changeStatus':
+    patch:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  description: 'Must be one of <code>initial</code>, <code>first_contact</code>, <code>interview</code>, <code>tech_assignment</code>, <code>rejected</code>, or <code>hired</code>.'
+                  example: initial
+                comment:
+                  type: string
+                  description: ''
+                  example: temporibus
+      security: []
+    parameters:
+      -
+        in: path
+        name: candidate_id
+        description: 'The ID of the candidate.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/candidates/{candidate_id}/skills':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 2
+                    title: SQL
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 5
+                    title: CSS
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 6
+                    title: Python
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 7
+                    title: 'C#'
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 8
+                    title: Swift
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 11
+                    title: TypeScript
+                    created_at: null
+                    updated_at: null
+                  -
+                    id: 12
+                    title: Go
+                    created_at: null
+                    updated_at: null
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: candidate_id
+        description: 'The ID of the candidate.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/candidates/{candidate_id}/timeline':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 1
+                    candidate_id: 1
+                    status_before: first_contact
+                    status_after: initial
+                    comment: 'Facere veniam aut libero labore fugit culpa. Est illo itaque sed maiores animi dolor qui. Accusantium repellendus ut molestias consequuntur.'
+                    created_at: '2022-07-19T17:08:53.000000Z'
+                    updated_at: '2022-07-19T17:08:53.000000Z'
+                  -
+                    id: 2
+                    candidate_id: 1
+                    status_before: tech_assignment
+                    status_after: first_contact
+                    comment: 'Molestiae assumenda alias omnis ipsam. Nobis itaque doloribus et aut culpa. Cum laborum quae consectetur nemo nisi beatae voluptas. Odit maiores ad aut est. Perferendis ut autem perferendis qui.'
+                    created_at: '2022-07-19T17:08:53.000000Z'
+                    updated_at: '2022-07-19T17:08:53.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: candidate_id
+        description: 'The ID of the candidate.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''
