@@ -4,7 +4,6 @@ namespace Tests\Feature\Api\V1;
 
 use App\Enums\RecruitmentStatus;
 use App\Models\Candidate;
-use App\Models\CandidateStatusChange;
 use App\Models\Skill;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
@@ -306,5 +305,4 @@ class CandidateTest extends TestCase
             $candidate
         );
     }
-
 }
