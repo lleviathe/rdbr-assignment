@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Response as R;
 class CandidateController extends Controller
 {
     public function __construct(
-        private CandidateService $service
+        private readonly CandidateService $service
     ) {
     }
 

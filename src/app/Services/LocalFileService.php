@@ -2,10 +2,11 @@
 
 namespace App\Services;
 
+use App\Contracts\FileService;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
-class FileService
+class LocalFileService implements FileService
 {
     public function save(UploadedFile $file, $path = '/'): string|bool
     {
