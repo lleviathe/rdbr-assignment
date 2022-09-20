@@ -6,8 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -19,8 +18,8 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Candidate::class);
             $table->text('comment')->nullable();
-            $table->enum('status_before', array_map(static fn ($status) => $status->value, RecruitmentStatus::cases()));
-            $table->enum('status_after', array_map(static fn ($status) => $status->value, RecruitmentStatus::cases()));
+            $table->string('status_before');
+            $table->string('status_after');
             $table->timestamps();
             $table->softDeletes();
         });

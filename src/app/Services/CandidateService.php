@@ -11,7 +11,7 @@ use Log;
 class CandidateService
 {
     public function __construct(
-        protected FileService $fileService
+        protected LocalFileService $fileService
     ) {
     }
 

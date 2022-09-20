@@ -5,7 +5,7 @@ namespace App\Traits;
 use App\Models\Candidate;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-trait HasCandidate
+trait  HasCandidate
 {
     public function candidate(): BelongsTo
     {
